@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+	<peci:Summary>
+		<peci:Integration_Event>1409ff76029f1089ba44ed6961d4b7e1</peci:Integration_Event>
+		<peci:Integration_Sent_On>2016-01-08T01:33:16.424-08:00</peci:Integration_Sent_On>
+		<peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-6-8</peci:Payroll_Company_ID>
+		<peci:Payroll_Company_Name>UK Payroll Company</peci:Payroll_Company_Name>
+		<peci:Pay_Group_ID>54</peci:Pay_Group_ID>
+		<peci:Pay_Group_Name>54</peci:Pay_Group_Name>
+		<peci:Pay_Group_Country>GB</peci:Pay_Group_Country>
+		<peci:Pay_Period_Start>2016-01-01-08:00</peci:Pay_Period_Start>
+		<peci:Pay_Period_End>2016-01-31-08:00</peci:Pay_Period_End>
+		<peci:Updated_From>2015-12-22T16:00:00.000-08:00</peci:Updated_From>
+		<peci:Updated_To>2016-01-08T01:33:16.424-08:00</peci:Updated_To>
+		<peci:Effective_From>2016-01-01-08:00</peci:Effective_From>
+		<peci:Effective_To>2016-01-31-08:00</peci:Effective_To>
+		<peci:Change_Detection>Include only changes entered since the last successful run.</peci:Change_Detection>
+		<peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+		<peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+		<peci:Full_Snapshot>0</peci:Full_Snapshot>
+		<peci:Worker_Count>1</peci:Worker_Count>
+		<peci:Version>1</peci:Version>
+	</peci:Summary>
+	<peci:Worker>
+		<peci:Worker_Summary>
+			<peci:WID>7b17c32582b81083569c9d3a0ef971a0</peci:WID>
+			<peci:Employee_ID>EMPLOYEE-6-15623</peci:Employee_ID>
+			<peci:Name>Richard Tester1</peci:Name>
+		</peci:Worker_Summary>
+		<peci:Effective_Change peci:Sequence="0">
+			<peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+			<peci:Effective_Moment>2016-01-08T01:26:00.289-08:00</peci:Effective_Moment>
+			<peci:Entry_Moment>2016-01-08T01:26:00.289-08:00</peci:Entry_Moment>
+			<peci:Related_Person_Communication peci:isUpdated="1">
+				<peci:Related_Person_ID>7b17c32582b8108358468be8a8227573</peci:Related_Person_ID>
+				<peci:Address peci:isDeleted="1">
+					<peci:Usage_Type>HOME</peci:Usage_Type>
+					<peci:Address_ID>ADDRESS_REFERENCE-6-17248</peci:Address_ID>
+					<peci:Address_Line_1>test</peci:Address_Line_1>
+					<peci:City>Hamburg</peci:City>
+					<peci:Postal_Code>3454</peci:Postal_Code>
+					<peci:Country>DE</peci:Country>
+					<peci:Country_Region>Hamburg</peci:Country_Region>
+					<peci:State_Province>Hamburg</peci:State_Province>
+				</peci:Address>
+				<peci:Email>
+					<peci:Usage_Type>HOME</peci:Usage_Type>
+					<peci:Email_Address>mmouse@test.com</peci:Email_Address>
+				</peci:Email>
+			</peci:Related_Person_Communication>
+		</peci:Effective_Change>
+		<peci:Effective_Change peci:Sequence="1">
+			<peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+			<peci:Effective_Moment>2016-01-08T01:29:59.867-08:00</peci:Effective_Moment>
+			<peci:Entry_Moment>2016-01-08T01:29:59.867-08:00</peci:Entry_Moment>
+			<peci:Personal>
+				<peci:Legal_Name>
+					<peci:Country>GB</peci:Country>
+					<peci:First_Name>Richard</peci:First_Name>
+					<peci:Last_Name>Tester1</peci:Last_Name>
+					<peci:General_Display_Name>Richard Tester1</peci:General_Display_Name>
+				</peci:Legal_Name>
+				<peci:Preferred_Name>
+					<peci:Country>GB</peci:Country>
+					<peci:First_Name>Richard</peci:First_Name>
+					<peci:Last_Name>Tester1</peci:Last_Name>
+					<peci:General_Display_Name>Richard Tester1</peci:General_Display_Name>
+				</peci:Preferred_Name>
+				<peci:Citizenship>
+					<peci:Citizenship_Status_ID>Citizen_United_Kingdom</peci:Citizenship_Status_ID>
+				</peci:Citizenship>
+				<peci:Gender>Male</peci:Gender>
+				<peci:Date_of_Birth>1976-01-08-08:00</peci:Date_of_Birth>
+				<peci:Marital_Status>Married_United_Kingdom</peci:Marital_Status>
+				<peci:Marital_Status_Date>2014-09-12-07:00</peci:Marital_Status_Date>
+				<peci:Uses_Tobacco>0</peci:Uses_Tobacco>
+				<peci:Ethnicity>
+					<peci:Ethnicity_ID>Mixed_White_Black_Carribean_United_Kingdom</peci:Ethnicity_ID>
+				</peci:Ethnicity>
+				<peci:Nationality>GB</peci:Nationality>
+				<peci:Hispanic_or_Latino>0</peci:Hispanic_or_Latino>
+				<peci:Local_Hukou>0</peci:Local_Hukou>
+				<peci:Preferred_Language>en_US</peci:Preferred_Language>
+			</peci:Personal>
+			<peci:Person_Identification peci:isUpdated="1">
+				<peci:National_Identifier>
+					<peci:National_ID>AB 28 82 79 D</peci:National_ID>
+					<peci:National_ID_Type>GBR-NI</peci:National_ID_Type>
+					<peci:Country>GB</peci:Country>
+					<peci:Issued_Date>2002-12-01-08:00</peci:Issued_Date>
+					<peci:Expiration_Date>2022-12-18-08:00</peci:Expiration_Date>
+					<peci:Verification_Date>2015-12-18-08:00</peci:Verification_Date>
+				</peci:National_Identifier>
+				<peci:Visa peci:isDeleted="1">
+					<peci:Visa_ID>siadnuoidur 3987</peci:Visa_ID>
+					<peci:Visa_ID_Type>E_1</peci:Visa_ID_Type>
+					<peci:Country>US</peci:Country>
+					<peci:Verification_Date>2015-12-18-08:00</peci:Verification_Date>
+				</peci:Visa>
+				<peci:Passport>
+					<peci:Passport_ID>8273ncedisufhyidus7</peci:Passport_ID>
+					<peci:Passport_ID_Type>Regular_blue_cover</peci:Passport_ID_Type>
+					<peci:Country>GB</peci:Country>
+					<peci:Issued_Date>2010-12-01-08:00</peci:Issued_Date>
+					<peci:Expiration_Date>2015-12-31-08:00</peci:Expiration_Date>
+					<peci:Verification_Date>2015-12-18-08:00</peci:Verification_Date>
+				</peci:Passport>
+				<peci:Other_Identifier>
+					<peci:Custom_ID>984709438409843</peci:Custom_ID>
+					<peci:Custom_ID_Type>External_Payroll_ID</peci:Custom_ID_Type>
+					<peci:Organization>57</peci:Organization>
+				</peci:Other_Identifier>
+			</peci:Person_Identification>
+		</peci:Effective_Change>
+	</peci:Worker>
+</peci:Workers_Effective_Stack>

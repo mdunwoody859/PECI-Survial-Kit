@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+	<peci:Summary>
+		<peci:Integration_Event>47831518bab6108aa3a455b90b739309</peci:Integration_Event>
+		<peci:Integration_Sent_On>2016-01-11T00:52:46.385-08:00</peci:Integration_Sent_On>
+		<peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-6-8</peci:Payroll_Company_ID>
+		<peci:Payroll_Company_Name>UK Payroll Company</peci:Payroll_Company_Name>
+		<peci:Pay_Group_ID>54</peci:Pay_Group_ID>
+		<peci:Pay_Group_Name>54</peci:Pay_Group_Name>
+		<peci:Pay_Group_Country>GB</peci:Pay_Group_Country>
+		<peci:Pay_Period_Start>2016-01-01-08:00</peci:Pay_Period_Start>
+		<peci:Pay_Period_End>2016-01-31-08:00</peci:Pay_Period_End>
+		<peci:Updated_From>2016-01-11T00:10:06.835-08:00</peci:Updated_From>
+		<peci:Updated_To>2016-01-11T00:52:46.385-08:00</peci:Updated_To>
+		<peci:Effective_From>2016-01-01-08:00</peci:Effective_From>
+		<peci:Effective_To>2016-01-31-08:00</peci:Effective_To>
+		<peci:Change_Detection>Include only changes entered since the last successful run.</peci:Change_Detection>
+		<peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+		<peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+		<peci:Full_Snapshot>0</peci:Full_Snapshot>
+		<peci:Worker_Count>1</peci:Worker_Count>
+		<peci:Version>1</peci:Version>
+	</peci:Summary>
+	<peci:Worker>
+		<peci:Worker_Summary>
+			<peci:WID>7b17c32582b81083569c9d3a0ef971a0</peci:WID>
+			<peci:Employee_ID>EMPLOYEE-6-15623</peci:Employee_ID>
+			<peci:Name>Rihanna Tester1</peci:Name>
+		</peci:Worker_Summary>
+		<peci:Effective_Change peci:Sequence="0">
+			<peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+			<peci:Effective_Moment>2016-01-11T00:00:00.000-08:00</peci:Effective_Moment>
+			<peci:Entry_Moment>2016-01-11T00:51:58.872-08:00</peci:Entry_Moment>
+			<peci:Person_Communication peci:isUpdated="1">
+				<peci:Address peci:isUpdated="1">
+					<peci:Usage_Type>HOME</peci:Usage_Type>
+					<peci:Address_ID>ADDRESS_REFERENCE-6-17247</peci:Address_ID>
+					<peci:Address_Line_1 peci:priorValue="Test address line 1">Test address line 12</peci:Address_Line_1>
+					<peci:Address_Line_2 peci:priorValue="Test address line 2">Test address line 22</peci:Address_Line_2>
+					<peci:Address_Line_3 peci:priorValue="Test address line 3">Test address line 33</peci:Address_Line_3>
+					<peci:City peci:priorValue="Worcester">Test City</peci:City>
+					<peci:Postal_Code peci:priorValue="AB1244">AB1233</peci:Postal_Code>
+					<peci:Country>GB</peci:Country>
+					<peci:Country_Region peci:priorValue="Worcestershire">Bedfordshire</peci:Country_Region>
+					<peci:State_Province peci:priorValue="Worcestershire">Bedfordshire</peci:State_Province>
+					<peci:Usage peci:isAdded="1">
+						<peci:Usage_Behavior_ID>COMMUNICATION_USAGE_BEHAVIOR_TENANTED-6-6</peci:Usage_Behavior_ID>
+					</peci:Usage>
+					<peci:Usage>
+						<peci:Usage_Behavior_ID>COMMUNICATION_USAGE_BEHAVIOR_TENANTED-6-10</peci:Usage_Behavior_ID>
+					</peci:Usage>
+					<peci:Usage>
+						<peci:Usage_Behavior_ID>COMMUNICATION_USAGE_BEHAVIOR_TENANTED-6-13</peci:Usage_Behavior_ID>
+					</peci:Usage>
+				</peci:Address>
+				<peci:Phone>
+					<peci:Usage_Type>HOME</peci:Usage_Type>
+					<peci:Phone_Device_Type>Mobile</peci:Phone_Device_Type>
+					<peci:International_Phone_Code>44</peci:International_Phone_Code>
+					<peci:Phone_Number>948948904453</peci:Phone_Number>
+					<peci:Phone_Number_With_Country_Code>+44  948948904453</peci:Phone_Number_With_Country_Code>
+				</peci:Phone>
+				<peci:Email>
+					<peci:Usage_Type>HOME</peci:Usage_Type>
+					<peci:Email_Address>r.tester1@test.com</peci:Email_Address>
+				</peci:Email>
+			</peci:Person_Communication>
+		</peci:Effective_Change>
+	</peci:Worker>
+</peci:Workers_Effective_Stack>

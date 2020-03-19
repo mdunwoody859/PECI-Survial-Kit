@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+    <peci:Summary>
+        <peci:Integration_Event>815d1333e3ef10001c9481b94e5101f2</peci:Integration_Event>
+        <peci:Integration_Sent_On>2017-03-06T16:40:20.940-08:00</peci:Integration_Sent_On>
+        <peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-4-217</peci:Payroll_Company_ID>
+        <peci:Payroll_Company_Name>External Pay Entity - Asia/Pac</peci:Payroll_Company_Name>
+        <peci:Payroll_Company_Code/>
+        <peci:Pay_Group_ID>PAY_GROUP-4-15</peci:Pay_Group_ID>
+        <peci:Pay_Group_Name>Third Party - Australia</peci:Pay_Group_Name>
+        <peci:Pay_Group_Country>AU</peci:Pay_Group_Country>
+        <peci:Pay_Group_Code/>
+        <peci:Pay_Period_Start>2017-03-01-08:00</peci:Pay_Period_Start>
+        <peci:Pay_Period_End>2017-03-31-07:00</peci:Pay_Period_End>
+        <peci:Updated_From>2017-03-03T09:33:53.000-08:00</peci:Updated_From>
+        <peci:Updated_To>2017-03-06T16:39:19.393-08:00</peci:Updated_To>
+        <peci:Effective_From>2017-03-01-08:00</peci:Effective_From>
+        <peci:Effective_To>2017-03-31-07:00</peci:Effective_To>
+        <peci:Change_Detection>Include only changes entered since the last successful
+            run.</peci:Change_Detection>
+        <peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+        <peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+        <peci:Full_Snapshot>0</peci:Full_Snapshot>
+        <peci:Worker_Count>5</peci:Worker_Count>
+        <peci:Version>1</peci:Version>
+    </peci:Summary>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>c803340ed5924b5da0dd7140a63c44c6</peci:WID>
+            <peci:Employee_ID>21120</peci:Employee_ID>
+            <peci:Name>Manager Manager_6325.0</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+               <peci:Derived_Event_Code>HIR</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2017-03-15T00:00:00.000-07:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2017-03-03T14:34:59.993-08:00</peci:Entry_Moment>
+            <peci:Worker_Status>
+                <peci:Status>Active</peci:Status>
+                <peci:Active>1</peci:Active>
+                <peci:Active_Status_Date>2017-03-15-07:00</peci:Active_Status_Date>
+                <peci:Hire_Date>2017-03-15-07:00</peci:Hire_Date>
+                <peci:Original_Hire_Date>2000-01-01-08:00</peci:Original_Hire_Date>
+                <peci:Hire_Reason>Hire_Employee_New_Hire_Fill_Vacancy</peci:Hire_Reason>
+                <peci:Is_Rehire>1</peci:Is_Rehire>
+                <peci:Continuous_Service_Date>2017-03-15-07:00</peci:Continuous_Service_Date>
+                <peci:First_Day_of_Work>2017-03-15-07:00</peci:First_Day_of_Work>
+                <peci:Seniority_Date>2000-01-01-08:00</peci:Seniority_Date>
+            </peci:Worker_Status>
+            <peci:Personal>
+                <peci:Legal_Name>
+                    <peci:Country>SG</peci:Country>
+                    <peci:First_Name>Manager</peci:First_Name>
+                    <peci:Last_Name>Manager_6325.0</peci:Last_Name>
+                    <peci:General_Display_Name>Manager Manager_6325.0</peci:General_Display_Name>
+                </peci:Legal_Name>
+                <peci:Preferred_Name>
+                    <peci:Country>SG</peci:Country>
+                    <peci:First_Name>Manager</peci:First_Name>
+                    <peci:Last_Name>Manager_6325.0</peci:Last_Name>
+                    <peci:General_Display_Name>Manager Manager_6325.0</peci:General_Display_Name>
+                </peci:Preferred_Name>
+                <peci:Citizenship>
+                    <peci:Citizenship_Status_ID>CitizenSGP</peci:Citizenship_Status_ID>
+                </peci:Citizenship>
+                <peci:Gender>Male</peci:Gender>
+                <peci:Date_of_Birth>1980-06-27-07:00</peci:Date_of_Birth>
+                <peci:Country_of_Birth>SG</peci:Country_of_Birth>
+                <peci:Marital_Status>Married_Singapore</peci:Marital_Status>
+                <peci:Religion>Christian_Singapore</peci:Religion>
+                <peci:Ethnicity>
+                    <peci:Ethnicity_ID>Singapore_Chinese</peci:Ethnicity_ID>
+                </peci:Ethnicity>
+                <peci:Nationality>SG</peci:Nationality>
+                <peci:Preferred_Language>en_US</peci:Preferred_Language>
+            </peci:Personal>
+            <peci:Person_Communication>
+                <peci:Address>
+                    <peci:Usage_Type>WORK</peci:Usage_Type>
+                    <peci:Address_ID>ADDRESS_REFERENCE-4-640</peci:Address_ID>
+                    <peci:Address_Line_1>3939 The Embarcadero</peci:Address_Line_1>
+                    <peci:City>San Francisco</peci:City>
+                    <peci:Postal_Code>94111</peci:Postal_Code>
+                    <peci:Country>US</peci:Country>
+                    <peci:Country_Region>California</peci:Country_Region>
+                    <peci:State_Province>California</peci:State_Province>
+                </peci:Address>
+                <peci:Address>
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Address_ID>ADDRESS_REFERENCE-4-934</peci:Address_ID>
+                    <peci:Address_Line_1>Leedon Road</peci:Address_Line_1>
+                    <peci:Address_Line_3>2</peci:Address_Line_3>
+                    <peci:City>Singapore</peci:City>
+                    <peci:Postal_Code>267829</peci:Postal_Code>
+                    <peci:Country>SG</peci:Country>
+                    <peci:Usage>
+                        <peci:Usage_Behavior_ID>COMMUNICATION_USAGE_BEHAVIOR_TENANTED-16-9</peci:Usage_Behavior_ID>
+                    </peci:Usage>
+                    <peci:Usage>
+                        <peci:Usage_Behavior_ID>COMMUNICATION_USAGE_BEHAVIOR_TENANTED-16-12</peci:Usage_Behavior_ID>
+                    </peci:Usage>
+                </peci:Address>
+                <peci:Phone>
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Phone_Device_Type>MOBILE</peci:Phone_Device_Type>
+                    <peci:International_Phone_Code>65</peci:International_Phone_Code>
+                    <peci:Phone_Number>9821.4208</peci:Phone_Number>
+                    <peci:Phone_Number_With_Country_Code>+65
+                        9821.4208</peci:Phone_Number_With_Country_Code>
+                </peci:Phone>
+                <peci:Email>
+                    <peci:Usage_Type>WORK</peci:Usage_Type>
+                    <peci:Email_Address>TestWorkEmail@workday.com</peci:Email_Address>
+                </peci:Email>
+            </peci:Person_Communication>
+            <peci:Person_Identification>
+                <peci:National_Identifier>
+                    <peci:National_ID>S8103418C</peci:National_ID>
+                    <peci:National_ID_Type>SGP-NRIC</peci:National_ID_Type>
+                    <peci:Country>SG</peci:Country>
+                    <peci:Issued_Date>1981-01-01-08:00</peci:Issued_Date>
+                    <peci:Verification_Date>2000-01-01-08:00</peci:Verification_Date>
+                    <peci:Verified_By>21001</peci:Verified_By>
+                </peci:National_Identifier>
+                <peci:Passport>
+                    <peci:Passport_ID>S77418188</peci:Passport_ID>
+                    <peci:Passport_ID_Type>STANDARD</peci:Passport_ID_Type>
+                    <peci:Country>SG</peci:Country>
+                    <peci:Issued_Date>2008-01-18-08:00</peci:Issued_Date>
+                    <peci:Verification_Date>2009-01-01-08:00</peci:Verification_Date>
+                    <peci:Verified_By>21001</peci:Verified_By>
+                </peci:Passport>
+            </peci:Person_Identification>
+            <peci:Related_Person>
+                <peci:Related_Person_ID>15fa10c749bc417e9eae9a38d1278ed4</peci:Related_Person_ID>
+                <peci:Beneficiary_ID>BENEFICIARY-4-207</peci:Beneficiary_ID>
+                <peci:Emergency_Contact_ID>271.175</peci:Emergency_Contact_ID>
+                <peci:Legal_Name>
+                    <peci:Country>SG</peci:Country>
+                    <peci:First_Name>Angela</peci:First_Name>
+                    <peci:Last_Name>Chong</peci:Last_Name>
+                    <peci:General_Display_Name>Angela Chong</peci:General_Display_Name>
+                </peci:Legal_Name>
+                <peci:Relationship_Type>620.3</peci:Relationship_Type>
+                <peci:Gender>Female</peci:Gender>
+                <peci:Birth_Date>1983-05-26-07:00</peci:Birth_Date>
+                <peci:Beneficiary>1</peci:Beneficiary>
+                <peci:Emergency_Contact>1</peci:Emergency_Contact>
+            </peci:Related_Person>
+            <peci:Related_Person_Communication>
+                <peci:Related_Person_ID>15fa10c749bc417e9eae9a38d1278ed4</peci:Related_Person_ID>
+                <peci:Address>
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Address_ID>ADDRESS_REFERENCE-4-934</peci:Address_ID>
+                    <peci:Address_Line_1>Leedon Road</peci:Address_Line_1>
+                    <peci:Address_Line_3>2</peci:Address_Line_3>
+                    <peci:City>Singapore</peci:City>
+                    <peci:Postal_Code>267829</peci:Postal_Code>
+                    <peci:Country>SG</peci:Country>
+                </peci:Address>
+                <peci:Phone>
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Phone_Device_Type>MOBILE</peci:Phone_Device_Type>
+                    <peci:International_Phone_Code>65</peci:International_Phone_Code>
+                    <peci:Phone_Number>9821.4208</peci:Phone_Number>
+                    <peci:Phone_Number_With_Country_Code>+65
+                        9821.4208</peci:Phone_Number_With_Country_Code>
+                </peci:Phone>
+            </peci:Related_Person_Communication>
+            <peci:Position peci:isAdded="1">
+                <peci:Position_ID>P-01380</peci:Position_ID>
+                <peci:Primary_Job>1</peci:Primary_Job>
+                <peci:Business_Title>Executive Assistant</peci:Business_Title>
+                <peci:Worker_Type>REGULAR</peci:Worker_Type>
+                <peci:Position_Time_Type>Full_time</peci:Position_Time_Type>
+                <peci:Job_Exempt>1</peci:Job_Exempt>
+                <peci:Scheduled_Weekly_Hours>40</peci:Scheduled_Weekly_Hours>
+                <peci:Default_Weekly_Hours>40</peci:Default_Weekly_Hours>
+                <peci:Pay_Cycle_Hours>173.33</peci:Pay_Cycle_Hours>
+                <peci:Full_Time_Equivalent_Percentage>1</peci:Full_Time_Equivalent_Percentage>
+                <peci:Worker_Compensation_Code>8810</peci:Worker_Compensation_Code>
+                <peci:Management_Level>8_Individual_Contributor</peci:Management_Level>
+                <peci:Job_Profile>37780</peci:Job_Profile>
+                <peci:Job_Family>
+                    <peci:ID>FA-Administration</peci:ID>
+                    <peci:Name>FA-Administration</peci:Name>
+                    <peci:Mapped_Value>FA-Administration</peci:Mapped_Value>
+                </peci:Job_Family>
+                <peci:Business_Site>
+                    <peci:Location_ID>San_Francisco_site</peci:Location_ID>
+                    <peci:Location_Name>San Francisco</peci:Location_Name>
+                    <peci:Address_ID>ADDRESS_REFERENCE-4-640</peci:Address_ID>
+                    <peci:Address_Line_1>3939 The Embarcadero</peci:Address_Line_1>
+                    <peci:City>San Francisco</peci:City>
+                    <peci:Postal_Code>94111</peci:Postal_Code>
+                    <peci:Country>US</peci:Country>
+                    <peci:Country_Region>California</peci:Country_Region>
+                    <peci:State_Province>California</peci:State_Province>
+                </peci:Business_Site>
+                <peci:Regular_Paid_Equivalent_Hours>0</peci:Regular_Paid_Equivalent_Hours>
+                <peci:Supervisor>
+                    <peci:ID>21001</peci:ID>
+                    <peci:Name>Logan McNeil (CHRO, HRExe, Mgr 4000, MatMgr,
+                        ProMgr,TalMgr,VPRept)</peci:Name>
+                </peci:Supervisor>
+                <peci:Annual_Work_Period_Work_Percent_Of_Year>0</peci:Annual_Work_Period_Work_Percent_Of_Year>
+                <peci:Organization>
+                    <peci:Organization_ID>Headquarters_Region</peci:Organization_ID>
+                    <peci:Organization_Type>REGION</peci:Organization_Type>
+                    <peci:Organization_Name>Headquarters - Corporate</peci:Organization_Name>
+                    <peci:Mapped_Value>Headquarters_Region</peci:Mapped_Value>
+                </peci:Organization>
+                <peci:Organization>
+                    <peci:Organization_ID>41500</peci:Organization_ID>
+                    <peci:Organization_Type>COST_CENTER</peci:Organization_Type>
+                    <peci:Organization_Code>41500</peci:Organization_Code>
+                    <peci:Organization_Name>HR Services</peci:Organization_Name>
+                    <peci:Mapped_Value>41500</peci:Mapped_Value>
+                </peci:Organization>
+                <peci:Organization>
+                    <peci:Organization_ID>GMS_USA_company</peci:Organization_ID>
+                    <peci:Organization_Type>COMPANY</peci:Organization_Type>
+                    <peci:Organization_Code>500.1</peci:Organization_Code>
+                    <peci:Organization_Name>Global Modern Services, Inc.
+                        (USA)</peci:Organization_Name>
+                    <peci:Mapped_Value>GMS_USA_company</peci:Mapped_Value>
+                </peci:Organization>
+                <peci:Organization>
+                    <peci:Organization_ID>Human_Resources_supervisory</peci:Organization_ID>
+                    <peci:Organization_Type>SUPERVISORY</peci:Organization_Type>
+                    <peci:Organization_Code>4000</peci:Organization_Code>
+                    <peci:Organization_Name>Human Resources</peci:Organization_Name>
+                    <peci:Mapped_Value>Human_Resources_supervisory</peci:Mapped_Value>
+                </peci:Organization>
+            </peci:Position>
+            <peci:Compensation peci:isAdded="1">
+                <peci:Position_ID>P-01380</peci:Position_ID>
+                <peci:Compensation_Grade>Non_Management</peci:Compensation_Grade>
+                <peci:Compensation_Change_Reason>Hire_Employee_New_Hire_Fill_Vacancy</peci:Compensation_Change_Reason>
+                <peci:Compensation_Summary_Based_on_Compensation_Grade>
+                    <peci:Total_Base_Pay>65000</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis>65000</peci:Primary_Compensation_Basis>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                </peci:Compensation_Summary_Based_on_Compensation_Grade>
+                <peci:Compensation_Summary_in_Annualized_Frequency>
+                    <peci:Total_Base_Pay>65000</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis>65000</peci:Primary_Compensation_Basis>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                </peci:Compensation_Summary_in_Annualized_Frequency>
+                <peci:Compensation_Summary_in_Pay_Group_Frequency>
+                    <peci:Total_Base_Pay>5416.67</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis>5416.67</peci:Primary_Compensation_Basis>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                </peci:Compensation_Summary_in_Pay_Group_Frequency>
+            </peci:Compensation>
+            <peci:Compensation_Plans peci:isAdded="1">
+                <peci:Position_ID>P-01380</peci:Position_ID>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Car_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>850</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Phone_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>250</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Salary_and_Hourly_Plan>
+                    <peci:Compensation_Plan>SALARY_Salary_Plan</peci:Compensation_Plan>
+                    <peci:Amount>65000</peci:Amount>
+                    <peci:Prorated_Amount>65000</peci:Prorated_Amount>
+                    <peci:Apply_FTE>1</peci:Apply_FTE>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                    <peci:Start_Date>2017-03-15-07:00</peci:Start_Date>
+                </peci:Salary_and_Hourly_Plan>
+            </peci:Compensation_Plans>
+            <peci:Benefits_Earnings_and_Deductions peci:isAdded="1">
+                <peci:External_Payroll_Code_Name>Pension - ER (PI)</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>PENERPI</peci:External_Payroll_Code>
+                <peci:Earning_or_Deduction>D</peci:Earning_or_Deduction>
+                <peci:Amount>0</peci:Amount>
+                <peci:Percentage>0.2</peci:Percentage>
+                <peci:Frequency>Monthly</peci:Frequency>
+                <peci:Currency>AUD</peci:Currency>
+                <peci:Coverage_Amount>0</peci:Coverage_Amount>
+                <peci:Goal_Amount>0</peci:Goal_Amount>
+            </peci:Benefits_Earnings_and_Deductions>
+            <peci:Compensation_Earnings_and_Deductions peci:isAdded="1">
+                <peci:External_Payroll_Code_Name>Base Pay (PI)</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>BAS-PI</peci:External_Payroll_Code>
+                <peci:Earning_or_Deduction>E</peci:Earning_or_Deduction>
+                <peci:Amount>5911.5</peci:Amount>
+                <peci:Non_Prorated_Amount>5911.5</peci:Non_Prorated_Amount>
+                <peci:Frequency>Monthly</peci:Frequency>
+                <peci:Currency>AUD</peci:Currency>
+            </peci:Compensation_Earnings_and_Deductions>
+            <peci:Additional_Information>
+                <peci:WorkerID>c803340ed5924b5da0dd7140a63c44c6</peci:WorkerID>
+                <ptdf:hire_date_JBH xmlns:ptdf="urn:com.workday/peci/tdf">2017-03-15-07:00</ptdf:hire_date_JBH>
+                <ptdf:current_hire_date_jbh xmlns:ptdf="urn:com.workday/peci/tdf">2017-03-15-07:00</ptdf:current_hire_date_jbh>
+                <ptdf:Hire_date_as_of_current_date_plusOne xmlns:ptdf="urn:com.workday/peci/tdf">2017-03-15-07:00</ptdf:Hire_date_as_of_current_date_plusOne>
+            </peci:Additional_Information>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Hire Employee</peci:Transaction_Type>
+            </peci:Transaction_Log>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Propose Compensation Hire</peci:Transaction_Type>
+            </peci:Transaction_Log>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>bcbb76733133439982913baf24b3a039</peci:WID>
+            <peci:Employee_ID>21285</peci:Employee_ID>
+            <peci:Name>Tyler White</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2017-03-10T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2017-03-06T11:02:32.740-08:00</peci:Entry_Moment>
+            <peci:Compensation peci:isUpdated="1">
+                <peci:Position_ID>P-00389</peci:Position_ID>
+                <peci:Compensation_Grade>Non_Management</peci:Compensation_Grade>
+                <peci:Compensation_Change_Reason peci:priorValue="Hire_Employee_New_Hire_New_Position">Adhoc</peci:Compensation_Change_Reason>
+                <peci:Compensation_Summary_Based_on_Compensation_Grade peci:isUpdated="1">
+                    <peci:Total_Base_Pay>66000</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis peci:priorValue="74782.71">81985.64</peci:Primary_Compensation_Basis>
+                    <peci:Currency>AUD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                </peci:Compensation_Summary_Based_on_Compensation_Grade>
+                <peci:Compensation_Summary_in_Annualized_Frequency peci:isUpdated="1">
+                    <peci:Total_Base_Pay>66000</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis peci:priorValue="74782.71">81985.64</peci:Primary_Compensation_Basis>
+                    <peci:Currency>AUD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                </peci:Compensation_Summary_in_Annualized_Frequency>
+                <peci:Compensation_Summary_in_Pay_Group_Frequency peci:isUpdated="1">
+                    <peci:Total_Base_Pay>5500</peci:Total_Base_Pay>
+                    <peci:Primary_Compensation_Basis peci:priorValue="6231.89">6832.13</peci:Primary_Compensation_Basis>
+                    <peci:Currency>AUD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                </peci:Compensation_Summary_in_Pay_Group_Frequency>
+            </peci:Compensation>
+            <peci:Compensation_Plans peci:isUpdated="1">
+                <peci:Position_ID>P-00389</peci:Position_ID>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Car_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>550</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Salary_and_Hourly_Plan>
+                    <peci:Compensation_Plan>SALARY_Salary_Plan</peci:Compensation_Plan>
+                    <peci:Amount>66000</peci:Amount>
+                    <peci:Prorated_Amount>66000</peci:Prorated_Amount>
+                    <peci:Apply_FTE>1</peci:Apply_FTE>
+                    <peci:Currency>AUD</peci:Currency>
+                    <peci:Frequency>Annual</peci:Frequency>
+                    <peci:Start_Date>2011-10-17-07:00</peci:Start_Date>
+                </peci:Salary_and_Hourly_Plan>
+            </peci:Compensation_Plans>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Request Compensation Change</peci:Transaction_Type>
+            </peci:Transaction_Log>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>bcbb76733133439982913baf24b3a038</peci:WID>
+            <peci:Employee_ID>21286</peci:Employee_ID>
+            <peci:Name>Joe Smith</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2017-03-10T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2017-03-06T11:02:32.740-08:00</peci:Entry_Moment>
+            <peci:Compensation_Plans peci:isUpdated="1">
+                <peci:Position_ID>P-00389</peci:Position_ID>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Car_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>550</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Cell_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>885</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_House_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>225</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+            </peci:Compensation_Plans>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Request Compensation Change</peci:Transaction_Type>
+            </peci:Transaction_Log>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>bcbb76733133439982913baf24b3a038</peci:WID>
+            <peci:Employee_ID>21287</peci:Employee_ID>
+            <peci:Name>Lou Smith</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2017-03-10T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2017-03-06T11:02:32.740-08:00</peci:Entry_Moment>
+            <peci:Compensation_Plans peci:isUpdated="1">
+                <peci:Position_ID>P-00389</peci:Position_ID>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Car_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>550</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Cell_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>885</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_House_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>225</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Food_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>320</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+            </peci:Compensation_Plans>
+            <peci:Compensation>
+            <peci:Compensation_Summary_in_Pay_Group_Frequency>
+                <peci:Total_Base_Pay>15416.67</peci:Total_Base_Pay>
+                <peci:Primary_Compensation_Basis>5416.67</peci:Primary_Compensation_Basis>
+                <peci:Currency>USD</peci:Currency>
+                <peci:Frequency>Monthly</peci:Frequency>
+            </peci:Compensation_Summary_in_Pay_Group_Frequency>
+            </peci:Compensation>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Request Compensation Change</peci:Transaction_Type>
+            </peci:Transaction_Log>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>bcbb76733133439982913baf24b3a038</peci:WID>
+            <peci:Employee_ID>21288</peci:Employee_ID>
+            <peci:Name>Mary Smith</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2017-03-10T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2017-03-06T11:02:32.740-08:00</peci:Entry_Moment>
+            <peci:Compensation_Plans peci:isUpdated="1">
+                <peci:Position_ID>P-00389</peci:Position_ID>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Car_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>550</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Cell_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>885</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_House_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>225</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+                <peci:Allowance_Plan peci:isAdded="1">
+                    <peci:Compensation_Plan>ALLOWANCE_Food_Allowance_Plan</peci:Compensation_Plan>
+                    <peci:Amount>320</peci:Amount>
+                    <peci:Currency>USD</peci:Currency>
+                    <peci:Frequency>Monthly</peci:Frequency>
+                    <peci:Start_Date>2017-03-10-08:00</peci:Start_Date>
+                </peci:Allowance_Plan>
+            </peci:Compensation_Plans>
+            <peci:Transaction_Log>
+                <peci:Transaction_Type>Request Compensation Change</peci:Transaction_Type>
+            </peci:Transaction_Log>
+        </peci:Effective_Change>
+    </peci:Worker>
+</peci:Workers_Effective_Stack>

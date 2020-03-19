@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+	<peci:Summary>
+		<peci:Integration_Event>47831518bab6108be64bd391215bdd9c</peci:Integration_Event>
+		<peci:Integration_Sent_On>2016-01-15T03:24:51.430-08:00</peci:Integration_Sent_On>
+		<peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-6-8</peci:Payroll_Company_ID>
+		<peci:Payroll_Company_Name>UK Payroll Company</peci:Payroll_Company_Name>
+		<peci:Pay_Group_ID>57</peci:Pay_Group_ID>
+		<peci:Pay_Group_Name>57</peci:Pay_Group_Name>
+		<peci:Pay_Group_Country>GB</peci:Pay_Group_Country>
+		<peci:Pay_Period_Start>2016-02-01-08:00</peci:Pay_Period_Start>
+		<peci:Pay_Period_End>2016-02-29-08:00</peci:Pay_Period_End>
+		<peci:Updated_From>2016-01-15T03:14:23.141-08:00</peci:Updated_From>
+		<peci:Updated_To>2016-01-15T03:24:51.430-08:00</peci:Updated_To>
+		<peci:Effective_From>2016-02-01-08:00</peci:Effective_From>
+		<peci:Effective_To>2016-02-29-08:00</peci:Effective_To>
+		<peci:Change_Detection>Include only changes entered since the last successful run.</peci:Change_Detection>
+		<peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+		<peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+		<peci:Full_Snapshot>0</peci:Full_Snapshot>
+		<peci:Worker_Count>1</peci:Worker_Count>
+		<peci:Version>1</peci:Version>
+	</peci:Summary>
+	<peci:Worker>
+		<peci:Worker_Summary>
+			<peci:WID>2ce95e479e5010740ae1f5d81ca0b61d</peci:WID>
+			<peci:Employee_ID>EMPLOYEE-6-15530</peci:Employee_ID>
+			<peci:Name>Mr. Tomas Toaster Tester</peci:Name>
+		</peci:Worker_Summary>
+		<peci:Effective_Change peci:Sequence="0">
+			<peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+			<peci:Effective_Moment>2016-02-01T00:00:00.000-08:00</peci:Effective_Moment>
+			<peci:Entry_Moment>2016-01-15T03:23:23.525-08:00</peci:Entry_Moment>
+			<peci:Compensation_Plans peci:isUpdated="1">
+				<peci:Position_ID>Position-6-23432</peci:Position_ID>
+				<peci:Allowance_Plan peci:isUpdated="1">
+					<peci:Compensation_Plan>Cell_Phone_Allowance_Plan</peci:Compensation_Plan>
+					<peci:Amount>30</peci:Amount>
+					<peci:Currency>GBP</peci:Currency>
+					<peci:Frequency>Monthly</peci:Frequency>
+					<peci:Apply_FTE>0</peci:Apply_FTE>
+					<peci:Start_Date>2016-01-29-08:00</peci:Start_Date>
+					<peci:End_Date peci:isAdded="1">2016-01-31-08:00</peci:End_Date>
+				</peci:Allowance_Plan>
+				<peci:Salary_and_Hourly_Plan>
+					<peci:Compensation_Plan>SALARY_PLAN-6-2</peci:Compensation_Plan>
+					<peci:Amount>7000</peci:Amount>
+					<peci:Prorated_Amount>7000</peci:Prorated_Amount>
+					<peci:Apply_FTE>1</peci:Apply_FTE>
+					<peci:Currency>GBP</peci:Currency>
+					<peci:Frequency>Monthly</peci:Frequency>
+					<peci:Start_Date>2016-01-15-08:00</peci:Start_Date>
+				</peci:Salary_and_Hourly_Plan>
+			</peci:Compensation_Plans>
+			<peci:Compensation_Earnings_and_Deductions peci:isUpdated="1">
+				<peci:External_Payroll_Code_Name>Cell Phone Allowance</peci:External_Payroll_Code_Name>
+				<peci:External_Payroll_Code>CELL_PHONE_ALLOWANCE</peci:External_Payroll_Code>
+				<peci:Position_Based>0</peci:Position_Based>
+				<peci:Earning_or_Deduction>E</peci:Earning_or_Deduction>
+				<peci:Amount peci:priorValue="30">0</peci:Amount>
+				<peci:Frequency>Monthly</peci:Frequency>
+				<peci:Currency>GBP</peci:Currency>
+			</peci:Compensation_Earnings_and_Deductions>
+		</peci:Effective_Change>
+	</peci:Worker>
+</peci:Workers_Effective_Stack>

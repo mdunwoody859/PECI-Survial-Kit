@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+    <peci:Summary>
+        <peci:Integration_Event>d589e1b2ac6a0100e181694a40005f11</peci:Integration_Event>
+        <peci:Integration_Sent_On>2020-01-24T10:30:28.887-08:00</peci:Integration_Sent_On>
+        <peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-7-252</peci:Payroll_Company_ID>
+        <peci:Payroll_Company_Name>EXAMONE-PC1-PECI</peci:Payroll_Company_Name>
+        <peci:Payroll_Company_Code>EXAMONE-PC1</peci:Payroll_Company_Code>
+        <peci:Pay_Group_ID>PAY_GROUP-7-28</peci:Pay_Group_ID>
+        <peci:Pay_Group_Name>EXAMONE-PC1-PG1-PECI</peci:Pay_Group_Name>
+        <peci:Pay_Group_Country>US</peci:Pay_Group_Country>
+        <peci:Pay_Group_Code>EXAMONE-PC1-PG1-PECI</peci:Pay_Group_Code>
+        <peci:Pay_Period_Start>2020-01-20-08:00</peci:Pay_Period_Start>
+        <peci:Pay_Period_End>2020-01-26-08:00</peci:Pay_Period_End>
+        <peci:Updated_From>2020-01-24T10:26:48.637-08:00</peci:Updated_From>
+        <peci:Updated_To>2020-01-24T10:30:28.887-08:00</peci:Updated_To>
+        <peci:Effective_From>2020-01-20-08:00</peci:Effective_From>
+        <peci:Effective_To>2020-01-26-08:00</peci:Effective_To>
+        <peci:Change_Detection>Include only changes entered since the last successful
+            run.</peci:Change_Detection>
+        <peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+        <peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+        <peci:Full_Snapshot>0</peci:Full_Snapshot>
+        <peci:Worker_Count>1</peci:Worker_Count>
+        <peci:Version>1</peci:Version>
+    </peci:Summary>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>52d05975ff3a1041e5dcde461c9d1b83</peci:WID>
+            <peci:Employee_ID>21435</peci:Employee_ID>
+            <peci:Name>EXAMONE-Stack EXAMONE-Stack</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>LOA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-24T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-24T10:28:56.905-08:00</peci:Entry_Moment>
+            <peci:Worker_Status peci:isUpdated="1">
+                <peci:Status peci:priorValue="Active">On Leave</peci:Status>
+                <peci:Active peci:priorValue="1">0</peci:Active>
+                <peci:Active_Status_Date peci:priorValue="2017-03-31-07:00"
+                    >2020-01-24-08:00</peci:Active_Status_Date>
+                <peci:Terminated>0</peci:Terminated>
+                <peci:Hire_Date>2017-03-31-07:00</peci:Hire_Date>
+                <peci:Original_Hire_Date>2017-03-31-07:00</peci:Original_Hire_Date>
+            </peci:Worker_Status>
+            <peci:Leave_of_Absence peci:isAdded="1">
+                <peci:Leave_Start_Date>2020-01-24-08:00</peci:Leave_Start_Date>
+                <peci:Estimated_Leave_End_Date>2020-01-24-08:00</peci:Estimated_Leave_End_Date>
+                <peci:Leave_Last_Day_of_Work>2020-01-23-08:00</peci:Leave_Last_Day_of_Work>
+                <peci:Leave_of_Absence_Type>LOA-DOG</peci:Leave_of_Absence_Type>
+                <peci:Payroll_Effect>1</peci:Payroll_Effect>
+                <peci:Number_of_Babies_or_Adopted_Children>0</peci:Number_of_Babies_or_Adopted_Children>
+                <peci:Number_of_Previous_Births>0</peci:Number_of_Previous_Births>
+                <peci:Number_of_Previous_Maternity_Leaves>0</peci:Number_of_Previous_Maternity_Leaves>
+                <peci:Number_of_Child_Dependents>0</peci:Number_of_Child_Dependents>
+                <peci:Age_of_Dependent>0</peci:Age_of_Dependent>
+                <peci:Leave_Entitlement_Override>0</peci:Leave_Entitlement_Override>
+            </peci:Leave_of_Absence>
+            <peci:Compensation_One_Time_Payment peci:isAdded="1">
+                <peci:Position_ID>P-00853</peci:Position_ID>
+                <peci:One_Time_Payment_ID>d589e1b2ac6a01d4396fb83440005311</peci:One_Time_Payment_ID>
+                <peci:External_Payroll_Code_Name>EXAMONE Spot
+                    Bonus</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>EXAMONE-OTP-Bonus</peci:External_Payroll_Code>
+                <peci:Earning_or_Deduction>E</peci:Earning_or_Deduction>
+                <peci:Amount>3000.65</peci:Amount>
+                <peci:Currency>USD</peci:Currency>
+            </peci:Compensation_One_Time_Payment>
+        </peci:Effective_Change>
+        <peci:Effective_Change peci:Sequence="1">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-24T10:29:48.147-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-24T10:29:48.147-08:00</peci:Entry_Moment>
+            <peci:Payment_Election peci:isAdded="1">
+                <peci:Payment_Election_Rule>EXTERNAL_PAYROLL_SYSTEM</peci:Payment_Election_Rule>
+                <peci:Order>1</peci:Order>
+                <peci:Payment_Type>Direct Deposit</peci:Payment_Type>
+                <peci:Country>US</peci:Country>
+                <peci:Currency>USD</peci:Currency>
+                <peci:Account_Number>1234567890</peci:Account_Number>
+                <peci:Account_Type>DDA</peci:Account_Type>
+                <peci:Bank_Name>Bank of Workday Training</peci:Bank_Name>
+                <peci:Bank_ID>121000358</peci:Bank_ID>
+                <peci:Distribution_Balance>1</peci:Distribution_Balance>
+            </peci:Payment_Election>
+        </peci:Effective_Change>
+    </peci:Worker>
+</peci:Workers_Effective_Stack>

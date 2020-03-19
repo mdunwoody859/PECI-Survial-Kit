@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+    <peci:Summary>
+        <peci:Integration_Event>165d0383d6770167dd66e78dd9006218</peci:Integration_Event>
+        <peci:Integration_Sent_On>2020-01-22T18:28:09.139-08:00</peci:Integration_Sent_On>
+        <peci:Payroll_Company_ID>GPS</peci:Payroll_Company_ID>
+        <peci:Payroll_Company_Name>External Pay Entity - GPS</peci:Payroll_Company_Name>
+        <peci:Payroll_Company_Code>GPS</peci:Payroll_Company_Code>
+        <peci:Pay_Group_ID>3rd_Party_Green_Planet_Acquisition</peci:Pay_Group_ID>
+        <peci:Pay_Group_Name>WCC Third Party - Green Planet Acquisition</peci:Pay_Group_Name>
+        <peci:Pay_Group_Country>US</peci:Pay_Group_Country>
+        <peci:Pay_Group_Code>SAL</peci:Pay_Group_Code>
+        <peci:Pay_Period_Start>2020-01-01-08:00</peci:Pay_Period_Start>
+        <peci:Pay_Period_End>2020-01-31-08:00</peci:Pay_Period_End>
+        <peci:Updated_From>2020-01-22T09:00:00.000-08:00</peci:Updated_From>
+        <peci:Updated_To>2020-01-22T18:28:09.139-08:00</peci:Updated_To>
+        <peci:Effective_From>2020-01-01-08:00</peci:Effective_From>
+        <peci:Effective_To>2020-01-31-08:00</peci:Effective_To>
+        <peci:Change_Detection>Include only changes entered since the last successful
+            run.</peci:Change_Detection>
+        <peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+        <peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+        <peci:Full_Snapshot>0</peci:Full_Snapshot>
+        <peci:Worker_Count>4</peci:Worker_Count>
+        <peci:Version>1</peci:Version>
+    </peci:Summary>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>3316e5667f11408a8e815b12225f8782</peci:WID>
+            <peci:Employee_ID>21147</peci:Employee_ID>
+            <peci:Name>Kim Slater</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T18:06:38.617-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T18:06:38.617-08:00</peci:Entry_Moment>
+            <peci:Personal peci:isUpdated="1">
+                <peci:Legal_Name>
+                    <peci:First_Name>Kim</peci:First_Name>
+                    <peci:Last_Name>Slater</peci:Last_Name>
+                </peci:Legal_Name>
+                <peci:Marital_Status peci:priorValue="Married_USA"
+                    >Divorced_USA</peci:Marital_Status>
+                <peci:Marital_Status_Date peci:isAdded="1"
+                    >2020-01-20-08:00</peci:Marital_Status_Date>
+            </peci:Personal>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>9b110e53fea846d9b03b39eb1bf74d04</peci:WID>
+            <peci:Employee_ID>21148</peci:Employee_ID>
+            <peci:Name>Yolanda Torres</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T10:30:44.125-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T10:30:44.125-08:00</peci:Entry_Moment>
+            <peci:Personal peci:isUpdated="1">
+                <peci:Legal_Name>
+                    <peci:First_Name>Yolanda</peci:First_Name>
+                    <peci:Last_Name>Torres</peci:Last_Name>
+                </peci:Legal_Name>
+                <peci:Marital_Status>Divorced_USA</peci:Marital_Status>
+                <peci:Marital_Status_Date peci:isAdded="1"
+                    >2020-01-15-08:00</peci:Marital_Status_Date>
+            </peci:Personal>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>7d1d81b755364454be40d199ec4f8f99</peci:WID>
+            <peci:Employee_ID>21152</peci:Employee_ID>
+            <peci:Name>Laurie Jenkins</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T14:30:21.451-08:00</peci:Entry_Moment>
+            <peci:Personal peci:isUpdated="1">
+                <peci:Legal_Name peci:isUpdated="1">
+                    <peci:First_Name>Laurie</peci:First_Name>
+                    <peci:Last_Name peci:priorValue="Jenkins">Chiang</peci:Last_Name>
+                </peci:Legal_Name>
+                <peci:Marital_Status>Married_USA</peci:Marital_Status>
+            </peci:Personal>
+        </peci:Effective_Change>
+        <peci:Effective_Change peci:Sequence="1">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T10:36:05.484-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T10:36:05.484-08:00</peci:Entry_Moment>
+            <peci:Personal peci:isUpdated="1">
+                <peci:Legal_Name>
+                    <peci:First_Name>Laurie</peci:First_Name>
+                    <peci:Last_Name>Chiang</peci:Last_Name>
+                </peci:Legal_Name>
+                <peci:Marital_Status peci:priorValue="Married_USA"
+                    >Divorced_USA</peci:Marital_Status>
+                <peci:Marital_Status_Date peci:isAdded="1"
+                    >2020-01-20-08:00</peci:Marital_Status_Date>
+            </peci:Personal>
+        </peci:Effective_Change>
+        <peci:Effective_Change peci:Sequence="2">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T10:56:02.082-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T10:56:02.082-08:00</peci:Entry_Moment>
+            <peci:Personal peci:isUpdated="1">
+                <peci:Legal_Name>
+                    <peci:First_Name>Laurie</peci:First_Name>
+                    <peci:Last_Name>Chiang</peci:Last_Name>
+                </peci:Legal_Name>
+                <peci:Marital_Status peci:priorValue="Divorced_USA"
+                    >Married_USA</peci:Marital_Status>
+                <peci:Marital_Status_Date peci:priorValue="2020-01-20-08:00"
+                    >2020-01-22-08:00</peci:Marital_Status_Date>
+            </peci:Personal>
+        </peci:Effective_Change>
+        <peci:Effective_Change peci:Sequence="3">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T11:06:06.793-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T11:06:06.793-08:00</peci:Entry_Moment>
+            <peci:Person_Communication peci:isUpdated="1">
+                <peci:Address>
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Address_Line_1>1212 North Lake Shore Drive</peci:Address_Line_1>
+                    <peci:Address_Line_2>Apt. 27C</peci:Address_Line_2>
+                    <peci:City>Chicago</peci:City>
+                    <peci:Postal_Code>60610</peci:Postal_Code>
+                    <peci:Country>US</peci:Country>
+                    <peci:Country_Region>Illinois</peci:Country_Region>
+                </peci:Address>
+                <peci:Phone peci:isUpdated="1">
+                    <peci:Usage_Type>HOME</peci:Usage_Type>
+                    <peci:Phone_Device_Type>Landline</peci:Phone_Device_Type>
+                    <peci:International_Phone_Code>1</peci:International_Phone_Code>
+                    <peci:Area_Code>312</peci:Area_Code>
+                    <peci:Phone_Number peci:priorValue="645-9775">6458888</peci:Phone_Number>
+                    <peci:Phone_Number_With_Country_Code peci:priorValue="+1 (312) 645-9775">+1
+                        (312) 6458888</peci:Phone_Number_With_Country_Code>
+                    <peci:Formatted_Phone_Number peci:priorValue="+1 312-645-9775">+1
+                        312-645-8888</peci:Formatted_Phone_Number>
+                </peci:Phone>
+            </peci:Person_Communication>
+        </peci:Effective_Change>
+    </peci:Worker>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>03502615485840ceb4beacecf02ddc30</peci:WID>
+            <peci:Employee_ID>21153</peci:Employee_ID>
+            <peci:Name>Amanda Mackenzie</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-22T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-22T18:24:20.442-08:00</peci:Entry_Moment>
+            <peci:Time_Off_Earnings_and_Deductions peci:isUpdated="1">
+                <peci:External_Payroll_Code_Name>Paid Vacation Time
+                    (PI)</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>VACA-PI</peci:External_Payroll_Code>
+                <peci:Time_Off_Type>Vacation_Hours</peci:Time_Off_Type>
+                <peci:Unit_of_Time>HOURS</peci:Unit_of_Time>
+                <peci:Time_Off_Entry peci:isAdded="1">
+                    <peci:Units>8</peci:Units>
+                </peci:Time_Off_Entry>
+            </peci:Time_Off_Earnings_and_Deductions>
+            <peci:Time_Tracking peci:isUpdated="1">
+                <peci:External_Payroll_Code_Name>WICT Time Entry
+                    (PI)</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>TIMEHR-PI</peci:External_Payroll_Code>
+                <peci:Override_Rate>0</peci:Override_Rate>
+                <peci:Time_Tracking_Entry peci:isUpdated="1">
+                    <peci:Quantity peci:priorValue="0">2</peci:Quantity>
+                </peci:Time_Tracking_Entry>
+            </peci:Time_Tracking>
+        </peci:Effective_Change>
+    </peci:Worker>
+</peci:Workers_Effective_Stack>

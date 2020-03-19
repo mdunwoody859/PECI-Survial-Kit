@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+    <peci:Summary>
+        <peci:Integration_Event>d589e1b2ac6a018ce46edcbf39002b0b</peci:Integration_Event>
+        <peci:Integration_Sent_On>2020-01-24T08:30:36.745-08:00</peci:Integration_Sent_On>
+        <peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-7-252</peci:Payroll_Company_ID>
+        <peci:Payroll_Company_Name>EXAMONE-PC1-PECI</peci:Payroll_Company_Name>
+        <peci:Payroll_Company_Code>EXAMONE-PC1</peci:Payroll_Company_Code>
+        <peci:Pay_Group_ID>PAY_GROUP-7-28</peci:Pay_Group_ID>
+        <peci:Pay_Group_Name>EXAMONE-PC1-PG1-PECI</peci:Pay_Group_Name>
+        <peci:Pay_Group_Country>US</peci:Pay_Group_Country>
+        <peci:Pay_Group_Code>EXAMONE-PC1-PG1-PECI</peci:Pay_Group_Code>
+        <peci:Pay_Period_Start>2020-01-20-08:00</peci:Pay_Period_Start>
+        <peci:Pay_Period_End>2020-01-26-08:00</peci:Pay_Period_End>
+        <peci:Updated_From>2020-01-24T08:24:39.692-08:00</peci:Updated_From>
+        <peci:Updated_To>2020-01-24T08:30:36.745-08:00</peci:Updated_To>
+        <peci:Effective_From>2020-01-20-08:00</peci:Effective_From>
+        <peci:Effective_To>2020-01-26-08:00</peci:Effective_To>
+        <peci:Change_Detection>Include only changes entered since the last successful
+            run.</peci:Change_Detection>
+        <peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+        <peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+        <peci:Full_Snapshot>0</peci:Full_Snapshot>
+        <peci:Worker_Count>1</peci:Worker_Count>
+        <peci:Version>1</peci:Version>
+    </peci:Summary>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>d589e1b2ac6a01a39fcf9d303900e309</peci:WID>
+            <peci:Employee_ID>21445</peci:Employee_ID>
+            <peci:Name>EXAMONE-Earnings EXAMONE-Earnings</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-24T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-24T08:28:49.322-08:00</peci:Entry_Moment>
+            <peci:Benefits_Earnings_and_Deductions peci:isUpdated="1">
+                <peci:External_Payroll_Code_Name>Medical-BlueCrossofCalif.HMO</peci:External_Payroll_Code_Name>
+                <peci:External_Payroll_Code>EXAMONE-BLUECRSS-HMO</peci:External_Payroll_Code>
+                <peci:Position_Based>0</peci:Position_Based>
+                <peci:Earning_or_Deduction>E</peci:Earning_or_Deduction>
+                <peci:Amount peci:priorValue="0">56.35</peci:Amount>
+                <peci:Percentage>0</peci:Percentage>
+                <peci:Frequency>Monthly</peci:Frequency>
+                <peci:Currency>USD</peci:Currency>
+                <peci:Coverage_Amount>0</peci:Coverage_Amount>
+                <peci:Goal_Amount>0</peci:Goal_Amount>
+            </peci:Benefits_Earnings_and_Deductions>
+        </peci:Effective_Change>
+    </peci:Worker>
+</peci:Workers_Effective_Stack>

@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+    <peci:Summary>
+        <peci:Integration_Event>d589e1b2ac6a01457d371ea65000f41e</peci:Integration_Event>
+        <peci:Integration_Sent_On>2020-01-24T15:30:14.949-08:00</peci:Integration_Sent_On>
+        <peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-7-252</peci:Payroll_Company_ID>
+        <peci:Payroll_Company_Name>EXAMONE-PC1-PECI</peci:Payroll_Company_Name>
+        <peci:Payroll_Company_Code>EXAMONE-PC1</peci:Payroll_Company_Code>
+        <peci:Pay_Group_ID>PAY_GROUP-7-29</peci:Pay_Group_ID>
+        <peci:Pay_Group_Name>EXAMONE-PC1-PG2-PECI</peci:Pay_Group_Name>
+        <peci:Pay_Group_Country>US</peci:Pay_Group_Country>
+        <peci:Pay_Group_Code>EXAMONE-PC1-PG2-PECI</peci:Pay_Group_Code>
+        <peci:Pay_Period_Start>2020-01-20-08:00</peci:Pay_Period_Start>
+        <peci:Pay_Period_End>2020-01-26-08:00</peci:Pay_Period_End>
+        <peci:Updated_From>2020-01-24T15:23:59.536-08:00</peci:Updated_From>
+        <peci:Updated_To>2020-01-24T15:30:14.949-08:00</peci:Updated_To>
+        <peci:Effective_From>2020-01-20-08:00</peci:Effective_From>
+        <peci:Effective_To>2020-01-26-08:00</peci:Effective_To>
+        <peci:Change_Detection>Include only changes entered since the last successful
+            run.</peci:Change_Detection>
+        <peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+        <peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+        <peci:Full_Snapshot>0</peci:Full_Snapshot>
+        <peci:Worker_Count>1</peci:Worker_Count>
+        <peci:Version>1</peci:Version>
+    </peci:Summary>
+    <peci:Worker>
+        <peci:Worker_Summary>
+            <peci:WID>d589e1b2ac6a01bc115670185000481e</peci:WID>
+            <peci:Employee_ID>21453</peci:Employee_ID>
+            <peci:Name>EXAMONE-Stage EXAMONE-Stage</peci:Name>
+        </peci:Worker_Summary>
+        <peci:Effective_Change peci:Sequence="0">
+            <peci:Derived_Event_Code>PGO</peci:Derived_Event_Code>
+            <peci:Effective_Moment>2020-01-05T00:00:00.000-08:00</peci:Effective_Moment>
+            <peci:Entry_Moment>2020-01-24T15:29:19.556-08:00</peci:Entry_Moment>
+            <peci:Worker_Status>
+                <peci:Status>Active</peci:Status>
+                <peci:Active>1</peci:Active>
+                <peci:Active_Status_Date>2020-01-01-08:00</peci:Active_Status_Date>
+                <peci:Terminated>0</peci:Terminated>
+                <peci:Hire_Date>2020-01-01-08:00</peci:Hire_Date>
+                <peci:Original_Hire_Date>2020-01-01-08:00</peci:Original_Hire_Date>
+            </peci:Worker_Status>
+            <peci:Personal>
+                <peci:Marital_Status>Single_USA</peci:Marital_Status>
+                <peci:Marital_Status_Date>2020-01-01-08:00</peci:Marital_Status_Date>
+            </peci:Personal>
+            <peci:Position peci:isUpdated="1">
+                <peci:Position_ID>P-00961</peci:Position_ID>
+                <peci:Primary_Job>1</peci:Primary_Job>
+                <peci:Business_Title>Executive Assistant</peci:Business_Title>
+                <peci:Worker_Type>Regular</peci:Worker_Type>
+                <peci:Position_Time_Type>Full_time</peci:Position_Time_Type>
+                <peci:Job_Exempt>1</peci:Job_Exempt>
+                <peci:Scheduled_Weekly_Hours>40</peci:Scheduled_Weekly_Hours>
+                <peci:Default_Weekly_Hours>40</peci:Default_Weekly_Hours>
+                <peci:Pay_Cycle_Hours>40</peci:Pay_Cycle_Hours>
+                <peci:Full_Time_Equivalent_Percentage>1</peci:Full_Time_Equivalent_Percentage>
+                <peci:Paid_FTE>0</peci:Paid_FTE>
+                <peci:Working_FTE>0</peci:Working_FTE>
+                <peci:Pay_Rate_Type>Salary</peci:Pay_Rate_Type>
+                <peci:Worker_Compensation_Code>8810</peci:Worker_Compensation_Code>
+                <peci:Management_Level>8_Individual_Contributor</peci:Management_Level>
+                <peci:Job_Profile>37780</peci:Job_Profile>
+                <peci:Regular_Paid_Equivalent_Hours>0</peci:Regular_Paid_Equivalent_Hours>
+                <peci:Annual_Work_Period_Work_Percent_Of_Year>0</peci:Annual_Work_Period_Work_Percent_Of_Year>
+                <peci:Position_End_Date peci:isAdded="1">2020-01-05-08:00</peci:Position_End_Date>
+                <peci:Organization>
+                    <peci:Organization_ID>PAY_GROUP-7-29</peci:Organization_ID>
+                    <peci:Organization_Type>PAY_GROUP</peci:Organization_Type>
+                    <peci:Organization_Code>EXAMONE-PC1-PG2-PECI</peci:Organization_Code>
+                    <peci:Organization_Name>EXAMONE-PC1-PG2-PECI</peci:Organization_Name>
+                    <peci:Mapped_Value>PAY_GROUP-7-29</peci:Mapped_Value>
+                </peci:Organization>
+                <peci:Rescinded_Pay_Group_Transfer>0</peci:Rescinded_Pay_Group_Transfer>
+            </peci:Position>
+            <peci:Position peci:isAdded="1">
+                <peci:Position_ID>P-00960</peci:Position_ID>
+                <peci:Primary_Job>1</peci:Primary_Job>
+                <peci:Business_Title>Executive Assistant</peci:Business_Title>
+                <peci:Worker_Type>Regular</peci:Worker_Type>
+                <peci:Position_Time_Type>Full_time</peci:Position_Time_Type>
+                <peci:Job_Exempt>1</peci:Job_Exempt>
+                <peci:Scheduled_Weekly_Hours>40</peci:Scheduled_Weekly_Hours>
+                <peci:Default_Weekly_Hours>40</peci:Default_Weekly_Hours>
+                <peci:Pay_Cycle_Hours>40</peci:Pay_Cycle_Hours>
+                <peci:Full_Time_Equivalent_Percentage>1</peci:Full_Time_Equivalent_Percentage>
+                <peci:Paid_FTE>0</peci:Paid_FTE>
+                <peci:Working_FTE>0</peci:Working_FTE>
+                <peci:Pay_Rate_Type>Salary</peci:Pay_Rate_Type>
+                <peci:Worker_Compensation_Code>8810</peci:Worker_Compensation_Code>
+                <peci:Management_Level>8_Individual_Contributor</peci:Management_Level>
+                <peci:Job_Profile>37780</peci:Job_Profile>
+                <peci:Job_Change_Reason>CHANGE_JOB_SUBCATEGORY-4-5</peci:Job_Change_Reason>
+                <peci:Regular_Paid_Equivalent_Hours>0</peci:Regular_Paid_Equivalent_Hours>
+                <peci:Annual_Work_Period_Work_Percent_Of_Year>0</peci:Annual_Work_Period_Work_Percent_Of_Year>
+                <peci:Organization>
+                    <peci:Organization_ID>PAY_GROUP-7-29</peci:Organization_ID>
+                    <peci:Organization_Type>PAY_GROUP</peci:Organization_Type>
+                    <peci:Organization_Code>EXAMONE-PC1-PG2-PECI</peci:Organization_Code>
+                    <peci:Organization_Name>EXAMONE-PC1-PG2-PECI</peci:Organization_Name>
+                    <peci:Mapped_Value>PAY_GROUP-7-29</peci:Mapped_Value>
+                </peci:Organization>
+            </peci:Position>
+        </peci:Effective_Change>
+    </peci:Worker>
+</peci:Workers_Effective_Stack>

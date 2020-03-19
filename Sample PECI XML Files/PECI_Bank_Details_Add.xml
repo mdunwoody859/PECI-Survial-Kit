@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+	<peci:Summary>
+		<peci:Integration_Event>47831518bab6108b915d4ae931d528ff</peci:Integration_Event>
+		<peci:Integration_Sent_On>2016-01-14T01:28:29.899-08:00</peci:Integration_Sent_On>
+		<peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-6-8</peci:Payroll_Company_ID>
+		<peci:Payroll_Company_Name>UK Payroll Company</peci:Payroll_Company_Name>
+		<peci:Pay_Group_ID>57</peci:Pay_Group_ID>
+		<peci:Pay_Group_Name>57</peci:Pay_Group_Name>
+		<peci:Pay_Group_Country>GB</peci:Pay_Group_Country>
+		<peci:Pay_Period_Start>2016-01-01-08:00</peci:Pay_Period_Start>
+		<peci:Pay_Period_End>2016-01-31-08:00</peci:Pay_Period_End>
+		<peci:Updated_From>2016-01-14T01:20:52.000-08:00</peci:Updated_From>
+		<peci:Updated_To>2016-01-14T01:28:29.899-08:00</peci:Updated_To>
+		<peci:Effective_From>2016-01-01-08:00</peci:Effective_From>
+		<peci:Effective_To>2016-01-31-08:00</peci:Effective_To>
+		<peci:Change_Detection>Include only changes entered since the last successful run.</peci:Change_Detection>
+		<peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+		<peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+		<peci:Full_Snapshot>0</peci:Full_Snapshot>
+		<peci:Worker_Count>1</peci:Worker_Count>
+		<peci:Version>1</peci:Version>
+	</peci:Summary>
+	<peci:Worker>
+		<peci:Worker_Summary>
+			<peci:WID>7b17c32582b81083569c9d3a0ef971a0</peci:WID>
+			<peci:Employee_ID>EMPLOYEE-6-15623</peci:Employee_ID>
+			<peci:Name>Rihanna Tester1</peci:Name>
+		</peci:Worker_Summary>
+		<peci:Effective_Change peci:Sequence="0">
+			<peci:Derived_Event_Code>DTA</peci:Derived_Event_Code>
+			<peci:Effective_Moment>2016-01-14T01:21:33.787-08:00</peci:Effective_Moment>
+			<peci:Entry_Moment>2016-01-14T01:21:33.787-08:00</peci:Entry_Moment>
+			<peci:Payment_Election peci:isAdded="1">
+				<peci:Payment_Election_Rule>PAYMENT_ELECTION_RULE-6-1</peci:Payment_Election_Rule>
+				<peci:Order>1</peci:Order>
+				<peci:Payment_Type>Direct Deposit</peci:Payment_Type>
+				<peci:Country>GB</peci:Country>
+				<peci:Currency>EUR</peci:Currency>
+				<peci:Bank_Account_Nickname>Test Account Nickname</peci:Bank_Account_Nickname>
+				<peci:Bank_Account_Name>Tom Tester</peci:Bank_Account_Name>
+				<peci:Account_Type>DDA</peci:Account_Type>
+				<peci:Bank_Name>Test</peci:Bank_Name>
+				<peci:IBAN>GB29NWBK60161331926819</peci:IBAN>
+				<peci:Bank_ID>40-48-65</peci:Bank_ID>
+				<peci:BIC>43565676</peci:BIC>
+				<peci:Branch_Name>Test Branch Name</peci:Branch_Name>
+				<peci:Distribution_Balance>1</peci:Distribution_Balance>
+			</peci:Payment_Election>
+		</peci:Effective_Change>
+	</peci:Worker>
+</peci:Workers_Effective_Stack>

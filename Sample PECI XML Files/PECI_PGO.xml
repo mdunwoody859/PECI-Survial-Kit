@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<peci:Workers_Effective_Stack xmlns:peci="urn:com.workday/peci">
+	<peci:Summary>
+		<peci:Integration_Event>47831518bab6108a65d983b6f9911301</peci:Integration_Event>
+		<peci:Integration_Sent_On>2016-01-10T05:59:22.530-08:00</peci:Integration_Sent_On>
+		<peci:Payroll_Company_ID>CUSTOM_ORGANIZATION-6-8</peci:Payroll_Company_ID>
+		<peci:Payroll_Company_Name>UK Payroll Company</peci:Payroll_Company_Name>
+		<peci:Pay_Group_ID>54</peci:Pay_Group_ID>
+		<peci:Pay_Group_Name>54</peci:Pay_Group_Name>
+		<peci:Pay_Group_Country>GB</peci:Pay_Group_Country>
+		<peci:Pay_Period_Start>2016-01-01-08:00</peci:Pay_Period_Start>
+		<peci:Pay_Period_End>2016-01-31-08:00</peci:Pay_Period_End>
+		<peci:Updated_From>2016-01-10T05:49:26.068-08:00</peci:Updated_From>
+		<peci:Updated_To>2016-01-10T05:59:22.530-08:00</peci:Updated_To>
+		<peci:Effective_From>2016-01-01-08:00</peci:Effective_From>
+		<peci:Effective_To>2016-01-31-08:00</peci:Effective_To>
+		<peci:Change_Detection>Include only changes entered since the last successful run.</peci:Change_Detection>
+		<peci:First_Primary_Run_of_Pay_Period>0</peci:First_Primary_Run_of_Pay_Period>
+		<peci:Ad_Hoc_Run>1</peci:Ad_Hoc_Run>
+		<peci:Full_Snapshot>0</peci:Full_Snapshot>
+		<peci:Worker_Count>1</peci:Worker_Count>
+		<peci:Version>1</peci:Version>
+	</peci:Summary>
+	<peci:Worker>
+		<peci:Worker_Summary>
+			<peci:WID>7b17c32582b81083569c9d3a0ef971a0</peci:WID>
+			<peci:Employee_ID>EMPLOYEE-6-15623</peci:Employee_ID>
+			<peci:Name>Rihanna Tester1</peci:Name>
+		</peci:Worker_Summary>
+<peci:Effective_Change peci:Sequence="0">
+	<peci:Derived_Event_Code>PGO</peci:Derived_Event_Code>
+	<peci:Effective_Moment>2016-01-12T00:00:00.000-08:00</peci:Effective_Moment>
+	<peci:Entry_Moment>2016-01-10T05:59:02.305-08:00</peci:Entry_Moment>
+	<peci:Worker_Status>
+		<peci:Status>Active</peci:Status>
+		<peci:Active>1</peci:Active>
+		<peci:Active_Status_Date>2015-12-18-08:00</peci:Active_Status_Date>
+		<peci:Terminated>0</peci:Terminated>
+		<peci:Hire_Date>2015-12-18-08:00</peci:Hire_Date>
+		<peci:Original_Hire_Date>2015-12-18-08:00</peci:Original_Hire_Date>
+		<peci:Hire_Reason>Hire_Employee_Hire_Employee_New_Hire</peci:Hire_Reason>
+		<peci:Continuous_Service_Date>2015-12-18-08:00</peci:Continuous_Service_Date>
+		<peci:First_Day_of_Work>2015-12-18-08:00</peci:First_Day_of_Work>
+		<peci:Seniority_Date>2015-12-18-08:00</peci:Seniority_Date>
+		<peci:Regrettable_Termination>0</peci:Regrettable_Termination>
+		<peci:Not_Returning>0</peci:Not_Returning>
+		<peci:Return_Unknown>0</peci:Return_Unknown>
+	</peci:Worker_Status>
+	<peci:Personal>
+		<peci:Legal_Name>
+			<peci:Country>GB</peci:Country>
+			<peci:First_Name>Rihanna</peci:First_Name>
+			<peci:Last_Name>Tester1</peci:Last_Name>
+			<peci:General_Display_Name>Rihanna Tester1</peci:General_Display_Name>
+		</peci:Legal_Name>
+		<peci:Preferred_Name>
+			<peci:Country>GB</peci:Country>
+			<peci:First_Name>Rihanna</peci:First_Name>
+			<peci:Last_Name>Tester1</peci:Last_Name>
+			<peci:General_Display_Name>Rihanna Tester1</peci:General_Display_Name>
+		</peci:Preferred_Name>
+		<peci:Citizenship>
+			<peci:Citizenship_Status_ID>Citizen_United_Kingdom</peci:Citizenship_Status_ID>
+		</peci:Citizenship>
+		<peci:Gender>Female</peci:Gender>
+		<peci:Date_of_Birth>1976-01-08-08:00</peci:Date_of_Birth>
+		<peci:Marital_Status>Married_United_Kingdom</peci:Marital_Status>
+		<peci:Marital_Status_Date>2014-09-12-07:00</peci:Marital_Status_Date>
+		<peci:Uses_Tobacco>0</peci:Uses_Tobacco>
+		<peci:Ethnicity>
+			<peci:Ethnicity_ID>Mixed_White_Black_Carribean_United_Kingdom</peci:Ethnicity_ID>
+		</peci:Ethnicity>
+		<peci:Nationality>GB</peci:Nationality>
+		<peci:Hispanic_or_Latino>0</peci:Hispanic_or_Latino>
+		<peci:Local_Hukou>0</peci:Local_Hukou>
+		<peci:Preferred_Language>en_US</peci:Preferred_Language>
+	</peci:Personal>
+	<peci:Person_Identification>
+		<peci:National_Identifier>
+			<peci:National_ID>AB 28 82 79 D</peci:National_ID>
+			<peci:National_ID_Type>GBR-NI</peci:National_ID_Type>
+			<peci:Country>GB</peci:Country>
+			<peci:Issued_Date>2002-12-01-08:00</peci:Issued_Date>
+			<peci:Expiration_Date>2022-12-18-08:00</peci:Expiration_Date>
+			<peci:Verification_Date>2015-12-18-08:00</peci:Verification_Date>
+		</peci:National_Identifier>
+		<peci:Passport>
+			<peci:Passport_ID>8273ncedisufhyidus7</peci:Passport_ID>
+			<peci:Passport_ID_Type>Regular_blue_cover</peci:Passport_ID_Type>
+			<peci:Country>GB</peci:Country>
+			<peci:Issued_Date>2010-12-01-08:00</peci:Issued_Date>
+			<peci:Expiration_Date>2015-12-31-08:00</peci:Expiration_Date>
+			<peci:Verification_Date>2015-12-18-08:00</peci:Verification_Date>
+		</peci:Passport>
+		<peci:Other_Identifier>
+			<peci:Custom_ID>984709438409843</peci:Custom_ID>
+			<peci:Custom_ID_Type>External_Payroll_ID</peci:Custom_ID_Type>
+			<peci:Organization>57</peci:Organization>
+		</peci:Other_Identifier>
+	</peci:Person_Identification>
+	<peci:Position>
+		<peci:Position_ID>Position-6-23428</peci:Position_ID>
+		<peci:Primary_Job>1</peci:Primary_Job>
+		<peci:Business_Title>General IT Sr. Manager</peci:Business_Title>
+		<peci:Worker_Type>Regular</peci:Worker_Type>
+		<peci:Position_Time_Type>Part_time</peci:Position_Time_Type>
+		<peci:Job_Exempt>0</peci:Job_Exempt>
+		<peci:Scheduled_Weekly_Hours>40</peci:Scheduled_Weekly_Hours>
+		<peci:Default_Weekly_Hours>40</peci:Default_Weekly_Hours>
+		<peci:Pay_Cycle_Hours>173.33</peci:Pay_Cycle_Hours>
+		<peci:Full_Time_Equivalent_Percentage>1</peci:Full_Time_Equivalent_Percentage>
+		<peci:Pay_Rate_Type>Salary</peci:Pay_Rate_Type>
+		<peci:Management_Level>L</peci:Management_Level>
+		<peci:Job_Category>General IT</peci:Job_Category>
+		<peci:Job_Profile>1065</peci:Job_Profile>
+		<peci:Job_Family>
+			<peci:ID>JOB_FAMILY-6-27</peci:ID>
+			<peci:Name>General IT</peci:Name>
+			<peci:Mapped_Value>JOB_FAMILY-6-27</peci:Mapped_Value>
+		</peci:Job_Family>
+		<peci:Business_Site>
+			<peci:Location_ID>Birmingham_Airport</peci:Location_ID>
+			<peci:Location_Name>Birmingham Airport</peci:Location_Name>
+			<peci:Address_ID>ADDRESS_REFERENCE-6-127</peci:Address_ID>
+			<peci:Address_Line_1>111 Winchester Drive</peci:Address_Line_1>
+			<peci:City>Pinner</peci:City>
+			<peci:Postal_Code>HA5 1DB</peci:Postal_Code>
+			<peci:Country>GB</peci:Country>
+		</peci:Business_Site>
+		<peci:Regular_Paid_Equivalent_Hours>0</peci:Regular_Paid_Equivalent_Hours>
+		<peci:Supervisor>
+			<peci:ID>EMPLOYEE-6-15494</peci:ID>
+			<peci:Name>Jaime Tester</peci:Name>
+		</peci:Supervisor>
+		<peci:Annual_Work_Period_Work_Percent_Of_Year>0</peci:Annual_Work_Period_Work_Percent_Of_Year>
+		<peci:Organization>
+			<peci:Organization_ID>50100021</peci:Organization_ID>
+			<peci:Organization_Type>Cost_Center</peci:Organization_Type>
+			<peci:Organization_Name>Demo-Bloom Fragrance</peci:Organization_Name>
+			<peci:Mapped_Value>50100021</peci:Mapped_Value>
+		</peci:Organization>
+		<peci:Organization>
+			<peci:Organization_ID>54</peci:Organization_ID>
+			<peci:Organization_Type>Pay_Group</peci:Organization_Type>
+			<peci:Organization_Name>54</peci:Organization_Name>
+			<peci:Mapped_Value>54</peci:Mapped_Value>
+		</peci:Organization>
+		<peci:Organization>
+			<peci:Organization_ID>BUSINESS_UNIT-6-1</peci:Organization_ID>
+			<peci:Organization_Type>Business_Unit</peci:Organization_Type>
+			<peci:Organization_Name>Business Unit for Demo</peci:Organization_Name>
+			<peci:Mapped_Value>BUSINESS_UNIT-6-1</peci:Mapped_Value>
+		</peci:Organization>
+		<peci:Organization>
+			<peci:Organization_ID>COMPANY-6-1</peci:Organization_ID>
+			<peci:Organization_Type>Company</peci:Organization_Type>
+			<peci:Organization_Name>Demo Company</peci:Organization_Name>
+			<peci:Mapped_Value>COMPANY-6-1</peci:Mapped_Value>
+		</peci:Organization>
+	</peci:Position>
+</peci:Effective_Change>
+	</peci:Worker>
+</peci:Workers_Effective_Stack>
