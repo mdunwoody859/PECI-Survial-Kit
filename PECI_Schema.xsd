@@ -1,0 +1,2825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:peci="urn:com.workday/peci"
+    xmlns:wd="urn:com.workday/bsvc" xmlns:ptdf="urn:com.workday/peci/tdf"
+    elementFormDefault="qualified" attributeFormDefault="qualified"
+    targetNamespace="urn:com.workday/peci">
+    <xsd:element name="Workers_Effective_Stack">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Summary" minOccurs="1">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Integration_Event" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Integration_Sent_On" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Payroll_Company_ID" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Payroll_Company_Name" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Payroll_Company_Code" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="Organization_Event_Type" type="xsd:string"
+                                minOccurs="0"/>
+                            <xsd:element name="Pay_Group_ID" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Pay_Group_Name" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Pay_Group_Country" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Pay_Group_Code" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="Pay_Period_Start" type="xsd:date" minOccurs="1"/>
+                            <xsd:element name="Pay_Period_End" type="xsd:date" minOccurs="1"/>
+                            <xsd:element name="Updated_From" type="xsd:dateTime" minOccurs="1"/>
+                            <xsd:element name="Updated_To" type="xsd:dateTime" minOccurs="1"/>
+                            <xsd:element name="Effective_From" type="xsd:date" minOccurs="1"/>
+                            <xsd:element name="Effective_To" type="xsd:date" minOccurs="1"/>
+                            <xsd:element name="Extended_Effective_To" type="xsd:date" minOccurs="0"/>
+                            <xsd:element name="Change_Detection" type="xsd:string" minOccurs="1"/>
+                            <xsd:element name="Extended_Change_Detection" type="xsd:date"
+                                minOccurs="0"/>
+                            <xsd:element name="First_Primary_Run_of_Pay_Period" type="xsd:boolean"
+                                minOccurs="1"/>
+                            <xsd:element name="First_Primary_Run_of_Extended_Pay_Period"
+                                type="xsd:boolean" minOccurs="0"/>
+                            <xsd:element name="Ad_Hoc_Run" type="xsd:boolean" minOccurs="1"/>
+                            <xsd:element name="Full_Snapshot" type="xsd:boolean" minOccurs="1"/>
+                            <xsd:element name="Worker_Count" type="xsd:nonNegativeInteger"
+                                minOccurs="1"/>
+                            <xsd:element name="Version" type="xsd:string" minOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Worker" type="peci:WorkerType" minOccurs="0"
+                    maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="WorkerType">
+        <xsd:sequence>
+            <xsd:element name="Worker_Summary" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="WID" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="Employee_ID" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Effective_Change" minOccurs="1" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Derived_Event_Code" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="Effective_Moment" type="xsd:dateTime" minOccurs="1"/>
+                        <xsd:element name="Entry_Moment" type="xsd:dateTime" minOccurs="1"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Worker_Status"
+                            type="peci:Worker_StatusType" minOccurs="0"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Personal"
+                            type="peci:PersonalType" minOccurs="0"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Person_Communication"
+                            type="peci:Person_CommunicationType" minOccurs="0"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Person_Identification" type="peci:Person_IdentificationType"
+                            minOccurs="0"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Related_Person"
+                            type="peci:Related_PersonType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Related_Person_Communication"
+                            type="peci:Related_Person_CommunicationType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Related_Person_Identification"
+                            type="peci:Related_Person_IdentificationType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Position"
+                            type="peci:PositionType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Compensation"
+                            type="peci:CompensationType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Compensation_Plans"
+                            type="peci:Compensation_PlansType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Payment_Election"
+                            type="peci:Payment_ElectionType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Collective_Agreement"
+                            type="peci:Collective_AgreementType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Leave_of_Absence"
+                            type="peci:Leave_of_AbsenceType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Benefits_Earnings_and_Deductions"
+                            type="peci:Benefits_Earnings_and_DeductionsType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Compensation_Earnings_and_Deductions"
+                            type="peci:Compensation_Earnings_and_DeductionsType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Time_Off_Earnings_and_Deductions"
+                            type="peci:Time_Off_Earnings_and_DeductionsType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Payroll_Input_Earnings_and_Deductions"
+                            type="peci:Payroll_Input_Earnings_and_DeductionsType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Compensation_One_Time_Payment"
+                            type="peci:Compensation_One_Time_PaymentType" minOccurs="0"
+                            maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Payroll_One_Time_Payment" type="peci:Payroll_One_Time_PaymentType"
+                            minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod" name="Costing_Allocation"
+                            type="peci:Costing_AllocationType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element xmlns:nyw="urn:com.netyourwork/aod"
+                            name="Additional_Information" type="peci:Additional_InformationType"
+                            minOccurs="0"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="Sequence" type="xsd:nonNegativeInteger" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TextFieldType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="isAdded" type="xsd:boolean"/>
+                <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+                <xsd:attribute name="priorValue" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="NumericFieldType">
+        <xsd:simpleContent>
+            <xsd:extension base="peci:RestrictedDecimal">
+                <xsd:attribute name="isAdded" type="xsd:boolean"/>
+                <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+                <xsd:attribute name="priorValue" type="xsd:decimal"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="RestrictedDecimal">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="26"/>
+            <xsd:fractionDigits value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="DateFieldType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:date">
+                <xsd:attribute name="isAdded" type="xsd:boolean"/>
+                <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+                <xsd:attribute name="priorValue" type="xsd:date"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="DateTimeFieldType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:dateTime">
+                <xsd:attribute name="isAdded" type="xsd:boolean"/>
+                <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+                <xsd:attribute name="priorValue" type="xsd:dateTime"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="BooleanFieldType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:boolean">
+                <xsd:attribute name="isAdded" type="xsd:boolean"/>
+                <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+                <xsd:attribute name="priorValue" type="xsd:boolean"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Related_PersonType">
+        <xsd:sequence>
+            <xsd:element name="Related_Person_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Dependent_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Beneficiary_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Emergency_Contact_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Legal_Name" type="peci:Related_Person-Legal_NameType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Citizenship" type="peci:Related_Person-CitizenshipType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Relationship_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Gender" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Birth_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Date_of_Death" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country_of_Birth" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_of_Birth" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_of_Birth" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Nationality" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Tobacco_Use" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Full_Time_Student" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Is_Disabled" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Dependent" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Beneficiary" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Emergency_Contact" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Is_Dependent_for_Payroll_Purposes" type="peci:BooleanFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Inactive_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The inactive date for the Dependent. This is a date type
+                        field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Relative" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Relative_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"
+            />
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Earnings_and_DeductionsType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Earnings and/or Deductions that
+                are associated with the assigned compensation and allowance plans, and includes such
+                information as Earning or Deduction indicator, External Payroll Code Name, External
+                Payroll Code, Amounts, Frequency and Currency as well as applicable
+                dates</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>PositionID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associating position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_Based" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Position Based</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Earning_or_Deduction" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This field indicates if the associated amount or percentage
+                        in this section is an earning or deduction. “E” indicates earnings and “D”
+                        indicates deductions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount being earned or deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Non_Prorated_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The non prorated amount being earned or
+                        deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The frequency used by the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The currency used for the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Costing_AllocationType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Costing Allocations as allocated
+                to Cost Centers and Regions, Worktag Code, Position ID, Allocation Percentage and
+                Allocation End Date</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Order" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Level" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Unique ID for position</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Allocation_Percentage" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Distribution percentage</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Costing_Worktag" type="peci:Costing_Allocation-Costing_WorktagType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Allocation_Start_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Allocation_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Benefits_Earnings_and_DeductionsType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Earnings and/or Deductions that
+                are associated with the enrolled benefits, and includes such information as Earning
+                or Deduction indicator, External Payroll Code Name, External Payroll Code, Amount or
+                Percentage, Frequency and Currency as well as applicable dates</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>PositionID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associated position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_Based" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Earning_or_Deduction" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This field indicates if the associated amount or percentage
+                        in this section is an earning or deduction. “E” indicates earnings and “D”
+                        indicates deductions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount being earned or deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Percentage" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The percentage elected by the worker for this particular
+                        earning or deduction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The frequency used by the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The currency used for the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Coverage_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The coverage amount provided by the insurance
+                        election</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Goal_Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Goal amount for External Payroll Input/FSA
+                        Plan</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="CompensationType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker compensation information such as Grade,
+                Total Base Pay, Primary Compensation Basis, Frequency and
+                Currency</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Unique ID for position</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Compensation_Grade" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Defines the amount of pay an employee may
+                        receive</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Compensation_Change_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Compensation Change Reason</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Compensation_Summary_Based_on_Compensation_Grade"
+                type="peci:Compensation-Compensation_Summary_Based_on_Compensation_GradeType"
+                minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>The compensation summary is represented in the currency and
+                        frequency of the employee's compensation grade profile, or compensation
+                        grade if no compensation grade profile exists.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Compensation_Summary_in_Annualized_Frequency"
+                type="peci:Compensation-Compensation_Summary_in_Annualized_FrequencyType"
+                minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>The compensation summary is represented in the currency of
+                        the employee's compensation grade profile, or compensation grade if no
+                        compensation grade profile exists and in annualized
+                        frequency.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Compensation_Summary_in_Pay_Group_Frequency"
+                type="peci:Compensation-Compensation_Summary_in_Pay_Group_FrequencyType"
+                minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>The compensation summary is represented in the currency and
+                        frequency of the pay group if employee is salaried otherwise hourly amount
+                        is output.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Compensation_Summary_in_Hourly_Frequency"
+                type="peci:Compensation-Compensation_Summary_in_Hourly_FrequencyType" minOccurs="0"
+                maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>The compensation summary is represented in the currency
+                        defined by compensation grade and in hourly frequency. This section is only
+                        applicable where there is hourly base pay assigned to the
+                        worker.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="PositionType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s position
+                information</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Unique ID for position</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Primary_Job" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates whether this job is the EE's primary
+                        job</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Business_Title" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Business title of position</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Worker_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Employee type. Example values are "Regular" and
+                        "Temporary".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_Time_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Time type. Example values are "Full Time" and "Part
+                        Time".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Job_Exempt" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Exempt workers do not receive overtime pay regardless of how
+                        many hours are worked.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Scheduled_Weekly_Hours" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The number of hours per week that an employee is scheduled to
+                        work.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Default_Weekly_Hours" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The default number of hours for a particular
+                        job</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Pay_Cycle_Hours" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Scheduled Weekly Hours multiplied by 52 then divided by
+                        annualization factor of frequency on pay group. This should return the
+                        scheduled hours based on the pay group frequency</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Full_Time_Equivalent_Percentage" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Scheduled Weekly Hours divided by Default Weekly
+                        Hours</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Pay_Rate_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Pay rate type. Example values are "Hourly" or
+                        "Salary".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Job_Classification" type="peci:Position-Job_ClassificationType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Company_Insider_Type" type="peci:Position-Company_Insider_TypeType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Work_Shift" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Work shift reference ID. May be configured to be
+                        required.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Worker_Compensation_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Worker Compensation Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Management_Level" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Management level ID</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Job_Category" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates whether a job is direct or
+                        indirect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Job_Profile" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Job_Family" type="peci:Position-Job_FamilyType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Job_Change_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Business_Site" type="peci:Position-Business_SiteType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Work_Hour_Profile" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Regular_Paid_Equivalent_Hours" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Supervisor" type="peci:Position-SupervisorType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Annual_Work_Period_Work_Percent_Of_Year" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>This is a part of the Academic Pay
+                        component.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Annual_Work_Period_Start_Date" type="peci:DateFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The start of the academic year.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Annual_Work_Period_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The end of the academic year.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Disbursement_Plan_Period_Start_Date" type="peci:DateFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Start of disbursement for academic year.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Disbursement_Plan_Period_End_Date" type="peci:DateFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>End of disbursement for academic year.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Probation_Start_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The date that the employee's probation period
+                        begins.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Probation_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The date that the employee's probation period
+                        ends.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="International_Assignment_Host_Country" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="International_Assignment_Home_Country" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="International_Assignment_Type" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>International Assignment Type. Example values are "Long-term"
+                        and "Short-term".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Add_Additional_Job_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Position_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Pay_Through_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="End_Additional_Job_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization" type="peci:Position-OrganizationType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_IdentificationType">
+        <xsd:annotation>
+            <xsd:documentation>This section contains worker National Identifiers, Government
+                Identifiers, and Other Custom Identifiers</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="National_Identifier"
+                type="peci:Person_Identification-National_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Government_Identifier"
+                type="peci:Person_Identification-Government_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Visa" type="peci:Person_Identification-VisaType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Passport" type="peci:Person_Identification-PassportType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="License" type="peci:Person_Identification-LicenseType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Other_Identifier"
+                type="peci:Person_Identification-Other_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Worker_StatusType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s employment status
+                information</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Status" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Active" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Active_Status_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Terminated" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Termination_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hire_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Original_Hire_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hire_Reason" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="End_Employment_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Continuous_Service_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Day_of_Work" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Expected_Retirement_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Seniority_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Severance_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Retirement_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Benefits_Service_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Company_Service_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Time_Off_Service_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Vesting_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Pay_Through_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Resignation_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Primary_Termination_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Primary_Termination_Category" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Termination_Reason"
+                type="peci:Worker_Status-Secondary_Termination_ReasonType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Local_Termination_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Regrettable_Termination" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Termination_Last_Day_of_Work" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Date_Entered_Workforce" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Date_for_Which_Paid" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Expected_Date_of_Return" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Not_Returning" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Return_Unknown" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_CommunicationType">
+        <xsd:annotation>
+            <xsd:documentation>This section contains worker address, phone number and e-mail
+                information</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Address" type="peci:Person_Communication-AddressType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Phone" type="peci:Person_Communication-PhoneType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Email" type="peci:Person_Communication-EmailType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Additional_InformationType">
+        <xsd:annotation>
+            <xsd:documentation>Additional Data Fields Document</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="WorkerID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Related_Person_CommunicationType">
+        <xsd:sequence>
+            <xsd:element name="Related_Person_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address" type="peci:Related_Person_Communication-AddressType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Phone" type="peci:Related_Person_Communication-PhoneType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Email" type="peci:Related_Person_Communication-EmailType"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Time_Off_Earnings_and_DeductionsType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Earnings and/or Deductions that
+                are associated with Time Off's, and includes such information as External Payroll
+                Code Name, External Payroll Code, Position Based, Time Off Type, Unit of Time, and
+                Time Off Entry as well as applicable dates</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Position ID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associated position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_Based" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a boolean indicator to show if the Earning/Deduction
+                        is position based.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Time_Off_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The type of time off specified on Maintain External Payroll
+                        Earnings/Deductions</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Unit_of_Time" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Unit of time, i.e. hours, days,etc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Time_Off_Entry"
+                type="peci:Time_Off_Earnings_and_Deductions-Time_Off_EntryType" minOccurs="0"
+                maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>(RE) Repeating elements for Time Off Entry that are
+                        associated with Time Off Earnings and Deductions. If the field attribute is
+                        enabled, sub-elements below will display inside the parent element, &lt;Time
+                        Off Entry&gt;, in the XML. This field must be enabled to include the
+                        sub-elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Compensation_PlansType">
+        <xsd:annotation>
+            <xsd:documentation>External Payroll - Compensation Plan Data</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Position_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Allowance_Plan" type="peci:Compensation_Plans-Allowance_PlanType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Period_Salary_Plan"
+                type="peci:Compensation_Plans-Period_Salary_PlanType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Unit_Salary_Plan" type="peci:Compensation_Plans-Unit_Salary_PlanType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Salary_and_Hourly_Plan"
+                type="peci:Compensation_Plans-Salary_and_Hourly_PlanType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Commission_Plan" type="peci:Compensation_Plans-Commission_PlanType"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="PersonalType">
+        <xsd:annotation>
+            <xsd:documentation>This section contains worker personal data such as Legal Name,
+                Preferred Name, statuses such as Military, Disability, Citizen and Marital. It also
+                contains Country, Region and City of Birth</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Legal_Name" type="peci:Personal-Legal_NameType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Preferred_Name" type="peci:Personal-Preferred_NameType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Additional_Name" type="peci:Personal-Additional_NameType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Disability_Status" type="peci:Personal-Disability_StatusType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Military_Service" type="peci:Personal-Military_ServiceType"
+                minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Citizenship" type="peci:Personal-CitizenshipType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Gender" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Date_of_Birth" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Date_of_Death" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country_of_Birth" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_of_Birth" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_of_Birth" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Marital_Status" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Marital_Status_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Religion" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Uses_Tobacco" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Ethnicity" type="peci:Personal-EthnicityType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Nationality" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Hispanic_or_Latino" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hukou_Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Hukou_Locality" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Hukou_Postal_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hukou_Subregion" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hukou_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Local_Hukou" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Native_Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Number_of_Payroll_Dependents" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Preferred_Language" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Payment_ElectionType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Payroll Payment Elections and
+                include such information as Payment Type, Currency, Bank Name, Bank Routing Number,
+                Account Number and Distribution information</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Payment_Election_Rule" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Order" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType"/>
+            <xsd:element name="Payment_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Bank_Account_Nickname" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Bank_Account_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Account_Number" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Roll_Number" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Account_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Bank_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="IBAN" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Bank_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="BIC" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Branch_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Branch_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Check_Digit" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Distribution_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Distribution_Percentage" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Distribution_Balance" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Related_Person_IdentificationType">
+        <xsd:sequence>
+            <xsd:element name="Related_Person_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="National_Identifier"
+                type="peci:Related_Person_Identification-National_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Government_Identifier"
+                type="peci:Related_Person_Identification-Government_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+            <xsd:element name="Other_Identifier"
+                type="peci:Related_Person_Identification-Other_IdentifierType" minOccurs="0"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Collective_AgreementType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes a worker's collective agreement information.
+                There may be one to many Collective Agreement sections per worker, but only one
+                collective agreement per position is allowed.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Effective date of the collective agreement
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The end date of a collective agreement
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The Position ID of the collective
+                        agreement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Collective_Agreement" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the collective agreement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Collective_Agreement_Factor"
+                type="peci:Collective_Agreement-Collective_Agreement_FactorType" minOccurs="0"
+                maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>(RE) Repeating element for Collective Agreement Factors that
+                        are associated with a Collective Agreement. If the field attribute is
+                        enabled, sub-elements below will display inside the parent element,
+                        &lt;Collective Agreement Factor&gt;, in the XML. This field must be enabled
+                        to include the sub-elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Compensation_One_Time_PaymentType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s One Time Payments as entered
+                through the Compensation Input request. It includes fields such as Earning or
+                Deduction indicator, External Payroll Code Name, External Payroll Code, Amount,
+                Currency and Reason</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>PositionID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associated position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Earning_or_Deduction" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This field indicates if the associated amount or percentage
+                        in this section is an earning or deduction. “E” indicates earnings and “D”
+                        indicates deductions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount being earned or deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Reason" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag" type="peci:Compensation_One_Time_Payment-WorktagType"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Leave_of_AbsenceType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Leave of Absence information
+                including LOA and RFL dates, Types, Benefit and Payroll Effects, PTO and Continuous
+                Service Accrual Effects, Reason and Date Last Paid</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Leave_Start_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Leave_End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Estimated_Leave_End_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Day_of_Work" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Leave_Last_Day_of_Work" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Leave_of_Absence_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Benefits_Effect" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Payroll_Effect" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Paid_Time_Off_Accrual_Effect" type="peci:BooleanFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Continuous_Service_Accrual_Effect" type="peci:BooleanFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Stock_Vesting_Effect" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Leave_Reason" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Last_Date_for_Which_Paid" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Last date for which paid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Expected_Due_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Expected due date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Child_Birth_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Child's birth date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Stillbirth_or_Baby_Deceased" type="peci:BooleanFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Boolean type. Indicates a stilbirth or baby
+                        deceased.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Date_Baby_Arrived_Home_From_Hospital" type="peci:DateFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Date baby arrived home from the
+                        hospital.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Adoption_Placement_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Adoption placement date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Adoption_Notification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Adoption notification date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Date_Child_Entered_Country" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Date type. Date for which the child entered the
+                        country.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Multiple_Child_Indicator" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Boolean type. Indicates whether or not the individual has
+                        multiple children.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Babies_or_Adopted_Children" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Numeric type. Number of previous births.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Previous_Births" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Numeric type. Number of previous births.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Previous_Maternity_Leaves" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Numeric type. Number of previous maternity
+                        leaves.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Child_Dependents" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Numeric type. Number of child dependents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Single_Parent_Indicator" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Boolean type. Indicates a single parent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Age_of_Dependent" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Decimal type. Age of dependent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Work_Related" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Boolean type. Whether or not the leave is work
+                        related.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Stop_Payment_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Date type field. Date when paid leave
+                        ends.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Social_Security_Disability_Code" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Text type field. This represents the IMSS Folio
+                        Code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Location_During_Leave" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Text type field. Location for a worker on leave at
+                        another academic institution.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Caesarean_Section_Birth" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Boolean type field. Indicates Caesarean Section
+                        Birth.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Leave_Percentage" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Numerical type field. Used to record the percentage
+                        of working time for which the employee is on leave. Used when a worker is on
+                        partial leave.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Week_of_Confinement" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Date type field. Used to record the date of the
+                        Sunday prior to the expected due date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Leave_Entitlement_Override" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Numerical type field. Used to record the value of
+                        an override to entitlement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Date_of_Recall" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a Date type field. Used to record date of recall used
+                        in the Canadian ROE report.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Payroll_One_Time_PaymentType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s One Time Payments as entered
+                through the Compensation Input request. It includes fields such as Earning or
+                Deduction indicator, External Payroll Code Name, External Payroll Code, Amount,
+                Currency and Reason</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>PositionID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associated position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Earning_or_Deduction" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This field indicates if the associated amount or percentage
+                        in this section is an earning or deduction. “E” indicates earnings and “D”
+                        indicates deductions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount being earned or deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag" type="peci:Payroll_One_Time_Payment-WorktagType"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Payroll_Input_Earnings_and_DeductionsType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes the worker’s Earnings and/or Deductions that
+                are associated with the Recurring Payroll Inputs and includes such information as
+                Earning or Deduction indicator, External Payroll Code Name, External Payroll Code,
+                Amount, Frequency and Currency as well as applicable dates</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Position_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>PositionID for which the Earning or Deduction is applicable.
+                        If the external earning or deduction code is not position-based, then the
+                        Position ID will not appear. However, if the external earning and deduction
+                        code is set up to be position-based, then the position ID will appear for
+                        the associated position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The name of the external Earning or Deduction (Name on
+                        Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="External_Payroll_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The external earning or deduction code (External Payroll Code
+                        on Maintain External Payroll Earnings/Deductions)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Position_Based" type="peci:BooleanFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Earning_or_Deduction" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This field indicates if the associated amount or percentage
+                        in this section is an earning or deduction. “E” indicates earnings and “D”
+                        indicates deductions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Start Date of the Recurring Payroll
+                        Input.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>End Date of the Recurring Payroll Input.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount being earned or deducted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The frequency used by the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The currency used for the
+                        earning/deduction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Goal_Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>Goal amount for External Payroll Input/FSA
+                        Plan</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Worktag"
+                type="peci:Payroll_Input_Earnings_and_Deductions-WorktagType" minOccurs="0"
+                maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation>Worktag</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Payroll_Input_Earnings_and_Deductions-WorktagType">
+        <xsd:sequence>
+            <xsd:element name="Worktag_Dimension" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Worktag_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Payroll_One_Time_Payment-WorktagType">
+        <xsd:sequence>
+            <xsd:element name="Worktag_Dimension" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Worktag_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_One_Time_Payment-WorktagType">
+        <xsd:sequence>
+            <xsd:element name="Worktag_Dimension" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Worktag_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Collective_Agreement-Collective_Agreement_FactorType">
+        <xsd:sequence>
+            <xsd:element name="Factor" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The factor associate with the collective
+                        agreement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Option" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The option selected for the collective agreement
+                        factor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Identification-Other_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="Custom_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Custom_ID_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Custom_ID_Description" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Identification-Government_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="Government_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Government_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Identification-National_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="National_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="National_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Series" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issuing_Agency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-CitizenshipType">
+        <xsd:sequence>
+            <xsd:element name="Citizenship_Status_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-Military_ServiceType">
+        <xsd:sequence>
+            <xsd:element name="Military_Service_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Military_Service_Status_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Service_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Begin_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Discharge_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Rank" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-Disability_StatusType">
+        <xsd:sequence>
+            <xsd:element name="Disability_Status_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Disability_Status_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Disability" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Accommodations_Provided" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Accommodations_Requested" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Certification_Basis" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Certification_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Certified_At" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Certification_Authority" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Date_Known" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Degree" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType"/>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="FTE_Towards_Quota" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Grade" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Note" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Rehabilitation_Provided" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Rehabilitation_Requested" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Remaining_Capacity" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType"/>
+            <xsd:element name="Severity_Recognition_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Work_Restrictions" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-Legal_NameType">
+        <xsd:sequence>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="First_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Middle_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Last_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hereditary" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Salutation" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Social_Suffix" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Title" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Full_Name_Malaysia_Singapore" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="General_Display_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Name_in_Local_Script" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-EthnicityType">
+        <xsd:sequence>
+            <xsd:element name="Ethnicity_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-Additional_NameType">
+        <xsd:sequence>
+            <xsd:element name="Name_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="First_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Middle_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Last_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hereditary" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Salutation" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Social_Suffix" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Title" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Full_Name_Malaysia_Singapore" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="General_Display_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Name_in_Local_Script" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Personal-Preferred_NameType">
+        <xsd:sequence>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="First_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Middle_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Last_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hereditary" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Salutation" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Social_Suffix" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Title" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Full_Name_Malaysia_Singapore" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="General_Display_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Name_in_Local_Script" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Plans-Unit_Salary_PlanType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker unit salary plan information. There can
+                be one or more unit salary plan data sections per worker. The occurrence behavior of
+                this section depends on how the "Include Unit Salary Plan Data section" integration
+                attribute is configured. This section includes an "Operation" field that indicates
+                if the section is added, removed, modified, or unchanged. Field attributes define
+                the behaviors and restrictions of individual fields. Enable "Include in Output" to
+                include a field in the output file. Enable "Required Field" to require the field to
+                be included in the output file. Enter a "Maximum Length" to truncate any value that
+                exceeds the limit value. If you specify a Payroll Interface version of 16 or later
+                (using the "Version" integration attribute), you can define the format of date type
+                and date-time type fields using the "Date Format" and "Datetime Format" integration
+                attributes. For Boolean type fields, valid values are 0(false) and 1(true). Fields
+                annotated with (IA) indicate that the field value may be controlled by an
+                integration attribute. Fields annotated with (IM) indicate that the field value can
+                be mapped using an integration map.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Compensation_Plan" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan assigned to the period salary
+                        assignment. You can map this field using the “Compensation Plan” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Unit" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan unit assigned to the unit salary
+                        assignment. You can map this field using the “Compensation Plan Unit”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Units" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The number of units associated with the unit salary
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Per_Unit_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The per unit amount associated with the unit salary
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount associated with the unit salary
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Prorated_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The prorated amount associated with the unit salary plan, if
+                        applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Apply_FTE" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a boolean type field that returns true (1) or false
+                        (0) if the unit salary plan is configured to apply FTE.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The currency type for all monetary amounts in the output
+                        file. You can map this field using the “Currency” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The frequency in which the amounts or percentages above
+                        should be paid or deducted. You can map this field using the “Frequency”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The effective start date of unit salary plan
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The actual end date or the plan end date of the unit salary
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Plans-Period_Salary_PlanType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker period salary plan information. There
+                can be one or more period salary plan data sections per worker. The occurrence
+                behavior of this section depends on how the "Include Period Salary Plan Data
+                section" integration attribute is configured. This section includes an "Operation"
+                field that indicates if the section is added, removed, modified, or unchanged. Field
+                attributes define the behaviors and restrictions of individual fields. Enable
+                "Include in Output" to include a field in the output file. Enable "Required Field"
+                to require the field to be included in the output file. Enter a "Maximum Length" to
+                truncate any value that exceeds the limit value. If you specify a Payroll Interface
+                version of 16 or later (using the "Version" integration attribute), you can define
+                the format of date type and date-time type fields using the "Date Format" and
+                "Datetime Format" integration attributes. For Boolean type fields, valid values are
+                0(false) and 1(true). Fields annotated with (IA) indicate that the field value may
+                be controlled by an integration attribute. Fields annotated with (IM) indicate that
+                the field value can be mapped using an integration map.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Compensation_Plan" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan assigned to the period salary
+                        assignment. You can map this field using the “Compensation Plan” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount from the period salary plan assignment. This is a
+                        Decimal type field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The currency type for all monetary amounts in the output
+                        file. You can map this field using the “Currency” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The frequency in which the amounts or percentages above
+                        should be paid or deducted. You can map this field using the “Frequency”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Period_Multiplier" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The compensation period multiplier from the period salary
+                        plan definition.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The effective start date of period salary
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The actual end date or the plan end date of the period salary
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Plans-Allowance_PlanType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker allowance plan information. There can be
+                one or more allowance plan data sections per worker. The occurrence behavior of this
+                section depends on how the "Include Allowance Plan Data section" integration
+                attribute is configured. This section includes an "Operation" field that indicates
+                if the section is added, removed, modified, or unchanged. Field attributes define
+                the behaviors and restrictions of individual fields. Enable "Include in Output" to
+                include a field in the output file. Enable "Required Field" to require the field to
+                be included in the output file. Enter a "Maximum Length" to truncate any value that
+                exceeds the limit value. If you specify a Payroll Interface version of 16 or later
+                (using the "Version" integration attribute), you can define the format of date type
+                and date-time type fields using the "Date Format" and "Datetime Format" integration
+                attributes. For Boolean type fields, valid values are 0(false) and 1(true). Fields
+                annotated with (IA) indicate that the field value may be controlled by an
+                integration attribute. Fields annotated with (IM) indicate that the field value can
+                be mapped using an integration map.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Compensation_Plan" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan assigned to the allowance plan
+                        assignment. You can map this field using the “Compensation Plan” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Percentage" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The percent from the allowance plan
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Unit" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan unit assigned to the allowance
+                        plan assignment. You can map this field using the “Compensation Plan Unit”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Number_of_Units" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The number of units associated with the allowance
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Per_Unit_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The per unit amount associated with the allowance
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount from the allowance plan assignment. This is a
+                        Decimal type field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Prorated_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The prorated amount associated with the allowance plan, if
+                        applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The currency type for all monetary amounts in the output
+                        file. You can map this field using the “Currency” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The frequency in which the amounts or percentages above
+                        should be paid or deducted. You can map this field using the “Frequency”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Apply_FTE" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a boolean type field that returns true (1) or false
+                        (0) if the allowance plan is configured to apply FTE.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The effective start date of allowance plan
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The actual end date or the plan end date of the allowance
+                        plan assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Plans-Salary_and_Hourly_PlanType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker salary or hourly plan information. There
+                can be one or more salary or hourly plan data sections per worker. The occurrence
+                behavior of this section depends on how the "Include Salary and Hourly Plan Data
+                Section" integration attribute is configured. This section includes an "Operation"
+                field that indicates if the section is added, removed, modified, or unchanged. Field
+                attributes define the behaviors and restrictions of individual fields. Enable
+                "Include in Output" to include a field in the output file. Enable "Required Field"
+                to require the field to be included in the output file. Enter a "Maximum Length" to
+                truncate any value that exceeds the limit value. If you specify a Payroll Interface
+                version of 16 or later (using the "Version" integration attribute), you can define
+                the format of date type and date-time type fields using the "Date Format" and
+                "Datetime Format" integration attributes. For Boolean type fields, valid values are
+                0(false) and 1(true). Fields annotated with (IA) indicate that the field value may
+                be controlled by an integration attribute. Fields annotated with (IM) indicate that
+                the field value can be mapped using an integration map.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Compensation_Plan" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan assigned to the salary or hourly
+                        assignment. You can map this field using the “Compensation Plan” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The amount from the salary or hourly plan assignment. This is
+                        a Decimal type field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Prorated_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The prorated amount associated with the salary or hourly
+                        plan, if applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Apply_FTE" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a boolean type field that returns true (1) or false
+                        (0) if the salary or hourly plan is configured to apply
+                        FTE.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The currency type for all monetary amounts in the output
+                        file. You can map this field using the “Currency” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The frequency in which the amounts or percentages above
+                        should be paid or deducted. You can map this field using the “Frequency”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The effective start date of salary or hourly plan
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The actual end date or the plan end date of the salary or
+                        hourly assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation_Plans-Commission_PlanType">
+        <xsd:annotation>
+            <xsd:documentation>This section includes worker commission plan information. There can
+                be one or more commission plan data sections per worker. The occurrence behavior of
+                this section depends on how the "Include Commission Plan Data section" integration
+                attribute is configured. This section includes an "Operation" field that indicates
+                if the section is added, removed, modified, or unchanged. Field attributes define
+                the behaviors and restrictions of individual fields. Enable "Include in Output" to
+                include a field in the output file. Enable "Required Field" to require the field to
+                be included in the output file. Enter a "Maximum Length" to truncate any value that
+                exceeds the limit value. If you specify a Payroll Interface version of 16 or later
+                (using the "Version" integration attribute), you can define the format of date type
+                and date-time type fields using the "Date Format" and "Datetime Format" integration
+                attributes. For Boolean type fields, valid values are 0(false) and 1(true). Fields
+                annotated with (IA) indicate that the field value may be controlled by an
+                integration attribute. Fields annotated with (IM) indicate that the field value can
+                be mapped using an integration map.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Compensation_Plan" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The compensation plan assigned to the commission plan
+                        assignment. You can map this field using the “Compensation Plan” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Target_Amount" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The target amount associated with the commission
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The currency type for all monetary amounts in the output
+                        file. You can map this field using the “Currency” Integration
+                        Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The frequency in which the amounts or percentages above
+                        should be paid or deducted. You can map this field using the “Frequency”
+                        Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Draw_Amount" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The draw amount associated with the commission
+                        plan.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Draw_Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>(IM) The draw frequency in which the amounts or percentages
+                        above should be paid or deducted. You can map this field using the
+                        “Frequency” Integration Map.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Draw_Duration" type="peci:TextFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The draw duration associated with the commission plan. This
+                        is a text field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Recoverable" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a boolean type field that returns true (1) or false
+                        (0) if the commission plan is configured as recoverable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Start_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The effective start date of commission plan
+                        assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="End_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>The actual end date or the plan end date of the commission
+                        plan assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Time_Off_Earnings_and_Deductions-Time_Off_EntryType">
+        <xsd:sequence>
+            <xsd:element name="Units" minOccurs="0" maxOccurs="1" type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The units entered for a time off request line
+                        item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Communication-EmailType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Email_Address" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"
+            />
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Communication-PhoneType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Device_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="International_Phone_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Area_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Number" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Extension" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Number_With_Country_Code" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Related_Person_Communication-AddressType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_1" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_2" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_3" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_4" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_5" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_6" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_7" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_8" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_9" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_3_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_4_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_5_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_6_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_7_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_8_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_9_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Local" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Postal_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country_Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="State_Province" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Worker_Summary-PositionType">
+        <xsd:sequence>
+            <xsd:element name="Is_Primary" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Pay_Group_Assignment_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Pay_Group_WID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Payroll_Company_WID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Worker_Summary-Position_as_of_LSRDType">
+        <xsd:sequence>
+            <xsd:element name="Is_Primary" type="peci:BooleanFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Pay_Group_Assignment_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Pay_Group_WID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Payroll_Company_WID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Communication-EmailType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Email_Address" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"
+            />
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Communication-PhoneType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Device_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="International_Phone_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Area_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Number" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Extension" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Phone_Number_With_Country_Code" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Communication-AddressType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_1" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_2" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_3" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_4" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_5" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_6" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_7" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_8" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_9" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_3_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_4_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_5_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_6_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_7_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_8_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_9_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Local" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Postal_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country_Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="State_Province" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Usage" type="peci:Person_Communication-Address-UsageType"
+                minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Worker_Status-Secondary_Termination_ReasonType">
+        <xsd:sequence>
+            <xsd:element name="Termination_Reason" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Termination_Category" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Person_Identification-Other_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="Custom_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Custom_ID_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Custom_ID_Description" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Identification-LicenseType">
+        <xsd:sequence>
+            <xsd:element name="License_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="License_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issuing_Authority" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="License_Class" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Identification-PassportType">
+        <xsd:sequence>
+            <xsd:element name="Passport_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Passport_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Person_Identification-VisaType">
+        <xsd:sequence>
+            <xsd:element name="Visa_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Visa_ID_Type" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Person_Identification-Government_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="Government_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Government_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Person_Identification-National_IdentifierType">
+        <xsd:sequence>
+            <xsd:element name="National_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="National_ID_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issued_Date" type="peci:DateFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Expiration_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Verification_Date" type="peci:DateFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Series" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Issuing_Agency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Verified_By" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-OrganizationType">
+        <xsd:sequence>
+            <xsd:element name="Organization_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization_Type" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization_Code" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Organization_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Mapped_Value" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-SupervisorType">
+        <xsd:sequence>
+            <xsd:element name="ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-Business_SiteType">
+        <xsd:sequence>
+            <xsd:element name="Location_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Location_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_1" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_2" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_3" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_4" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_5" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_6" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_7" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_8" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Address_Line_9" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_3_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_4_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_5_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_6_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_7_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_8_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Address_Line_9_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Local" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="City_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Postal_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Country_Region" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="State_Province" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_1_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Region_Subdivision_2_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-Job_FamilyType">
+        <xsd:sequence>
+            <xsd:element name="ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Mapped_Value" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-Company_Insider_TypeType">
+        <xsd:sequence>
+            <xsd:element name="ID" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Mapped_Value" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Position-Job_ClassificationType">
+        <xsd:sequence>
+            <xsd:element name="Job_Classification_Group" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Job_Classification_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Job_Classification_Description" type="peci:TextFieldType"
+                minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Mapped_Value" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation-Compensation_Summary_in_Pay_Group_FrequencyType">
+        <xsd:sequence>
+            <xsd:element name="Total_Base_Pay" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The base pay for a filled position or the base pay of the
+                        position that last occupied the open position. This is the sum of a
+                        position's compensation plan assignment amounts that are considered base
+                        pay.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Primary_Compensation_Basis" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The primary compensation basis for an position. This is the
+                        sum of an position's compensation amounts that are considered components of
+                        the position's primary compensation basis.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation-Compensation_Summary_in_Hourly_FrequencyType">
+        <xsd:sequence>
+            <xsd:element name="Total_Base_Pay" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The base pay for a filled position or the base pay of the
+                        position that last occupied the open position. This is the sum of a
+                        position's compensation plan assignment amounts that are considered base
+                        pay.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Primary_Compensation_Basis" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The primary compensation basis for an position. This is the
+                        sum of an position's compensation amounts that are considered components of
+                        the position's primary compensation basis.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation-Compensation_Summary_in_Annualized_FrequencyType">
+        <xsd:sequence>
+            <xsd:element name="Total_Base_Pay" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The base pay for a filled position or the base pay of the
+                        position that last occupied the open position. This is the sum of a
+                        position's compensation plan assignment amounts that are considered base
+                        pay.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Primary_Compensation_Basis" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The primary compensation basis for an position. This is the
+                        sum of an position's compensation amounts that are considered components of
+                        the position's primary compensation basis.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Compensation-Compensation_Summary_Based_on_Compensation_GradeType">
+        <xsd:sequence>
+            <xsd:element name="Total_Base_Pay" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The base pay for a filled position or the base pay of the
+                        position that last occupied the open position. This is the sum of a
+                        position's compensation plan assignment amounts that are considered base
+                        pay.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Primary_Compensation_Basis" minOccurs="0" maxOccurs="1"
+                type="peci:NumericFieldType">
+                <xsd:annotation>
+                    <xsd:documentation>The primary compensation basis for an position. This is the
+                        sum of an position's compensation amounts that are considered components of
+                        the position's primary compensation basis.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Currency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Frequency" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Costing_Allocation-Costing_WorktagType">
+        <xsd:sequence>
+            <xsd:element name="Worktag_Dimension" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Worktag_Code" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Worktag_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Related_Person-CitizenshipType">
+        <xsd:sequence>
+            <xsd:element name="Citizenship_Status_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod" name="Related_Person-Legal_NameType">
+        <xsd:sequence>
+            <xsd:element name="Country" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="First_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Middle_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Last_Name" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="First_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Middle_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Secondary_Last_Name_Local_2" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Hereditary" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Salutation" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Social_Suffix" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Title" type="peci:TextFieldType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Full_Name_Malaysia_Singapore" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="General_Display_Name" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+            <xsd:element name="Name_in_Local_Script" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType xmlns:nyw="urn:com.netyourwork/aod"
+        name="Person_Communication-Address-UsageType">
+        <xsd:sequence>
+            <xsd:element name="Usage_Behavior_ID" type="peci:TextFieldType" minOccurs="0"
+                maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="isAdded" type="xsd:boolean"/>
+        <xsd:attribute name="isDeleted" type="xsd:boolean"/>
+        <xsd:attribute name="isUpdated" type="xsd:boolean"/>
+    </xsd:complexType>
+</xsd:schema>
